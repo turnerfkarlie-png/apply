@@ -8,70 +8,251 @@
         :root {
             --primary: #00214c;
             --secondary: #0076d6;
-            --accent: #f2f7ff;
             --success: #28a745;
             --danger: #dc3545;
             --warning: #ffc107;
             --text: #333;
             --light-border: #e8e8e8;
+            --accent: #f2f7ff;
             --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
 
         /* TOP BAR */
-        .top-bar { background: white; padding: 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--light-border); position: sticky; top: 0; z-index: 200; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+        .top-bar {
+            background: white;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--light-border);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+        }
         .logo { height: 32px; width: auto; }
-        .hamburger { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 8px; border-radius: 4px; transition: background 0.2s; }
+        .hamburger {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
         .hamburger:hover { background: var(--accent); }
-        .hamburger span { display: block; width: 22px; height: 2px; background: var(--secondary); border-radius: 2px; }
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
 
         /* MENU OVERLAY */
-        .menu-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: white; z-index: 999; overflow-y: auto; }
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: white;
+            z-index: 999;
+            overflow-y: auto;
+        }
         .menu-overlay.open { display: block; }
-        .menu-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 2px solid var(--secondary); }
+        .menu-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 2px solid var(--secondary);
+        }
         .menu-logo { height: 28px; }
-        .menu-close { background: none; border: none; font-size: 20px; cursor: pointer; color: var(--secondary); font-weight: bold; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s; }
+        .menu-close {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--secondary);
+            font-weight: bold;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
         .menu-close:hover { background: var(--accent); }
         .menu-item { border-bottom: 1px solid var(--light-border); }
-        .menu-item a { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; text-decoration: none; color: #444; font-size: 15px; transition: all 0.2s; }
+        .menu-item a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            color: #444;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
         .menu-item a:hover { color: var(--secondary); background: var(--accent); padding-left: 28px; }
         .menu-item.highlight a { color: var(--secondary); font-weight: bold; }
         .menu-item a span { color: #bbb; font-size: 12px; }
 
         /* HEADER */
-        header { background-image: linear-gradient(rgba(0,33,76,0.72), rgba(0,33,76,0.72)), url('1000024576.jpg'); background-size: cover; background-position: center; color: white; padding: 70px 20px 60px; text-align: center; }
+        header {
+            background-image: linear-gradient(rgba(0,33,76,0.72), rgba(0,33,76,0.72)), url('1000024576.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 70px 20px 60px;
+            text-align: center;
+        }
         header h1 { font-size: 1.7em; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
         header p { margin: 0 auto 24px; max-width: 580px; opacity: 0.88; font-size: 1em; }
-        .btn-home { display: inline-block; background: var(--secondary); color: white; padding: 12px 28px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 14px; letter-spacing: 0.3px; transition: background 0.2s; }
+        .btn-home {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
         .btn-home:hover { background: #005bb5; }
 
         /* GPS SECTION */
-        .gps-section { background: #f9f9f9; border-bottom: 1px solid var(--light-border); padding: 20px; text-align: center; }
+        .gps-section {
+            background: #f9f9f9;
+            border-bottom: 1px solid var(--light-border);
+            padding: 24px 20px;
+            text-align: center;
+        }
         .progress-wrap { display: none; max-width: 420px; margin: 0 auto 10px; }
-        .progress-label { font-size: 13px; color: var(--primary); font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .progress-label {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
         .progress-bar-track { background: #e0e0e0; border-radius: 20px; height: 8px; overflow: hidden; }
-        .progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--secondary), #00c6ff); border-radius: 20px; width: 0%; animation: progressAnim 3s ease-in-out forwards; }
-        @keyframes progressAnim { 0% { width: 0%; } 30% { width: 40%; } 60% { width: 70%; } 90% { width: 90%; } 100% { width: 95%; } }
-        .spinner { width: 18px; height: 18px; border: 2px solid rgba(0,118,214,0.3); border-top-color: var(--secondary); border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; }
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), #00c6ff);
+            border-radius: 20px;
+            width: 0%;
+            animation: progressAnim 3s ease-in-out forwards;
+        }
+        @keyframes progressAnim {
+            0% { width: 0%; }
+            30% { width: 40%; }
+            60% { width: 70%; }
+            90% { width: 90%; }
+            100% { width: 95%; }
+        }
+        .spinner {
+            width: 18px; height: 18px;
+            border: 2px solid rgba(0,118,214,0.3);
+            border-top-color: var(--secondary);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: inline-block;
+        }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .gps-banner { max-width: 500px; margin: 0 auto; padding: 12px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; }
+
+        .gps-banner {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 14px 18px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+        }
         .gps-banner.waiting { background: var(--accent); border: 1px solid #c8dff7; color: var(--primary); }
         .gps-banner.success { background: #eafaf1; border: 1px solid #a9dfbf; color: #1a6e35; }
-        .gps-denied { display: none; max-width: 480px; margin: 0 auto; background: #fff5f5; border: 2px solid var(--danger); border-radius: 12px; padding: 30px 24px; text-align: center; }
-        .gps-denied .denied-icon { font-size: 48px; animation: pulse 1.5s ease-in-out infinite; margin-bottom: 16px; display: block; }
-        @keyframes pulse { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.15); opacity: 0.7; } }
-        .gps-denied h3 { color: var(--danger); font-size: 1.1em; margin-bottom: 10px; }
+
+        .gps-denied {
+            display: none;
+            max-width: 480px;
+            margin: 0 auto;
+            background: #fff5f5;
+            border: 2px solid var(--danger);
+            border-radius: 12px;
+            padding: 30px 24px;
+            text-align: center;
+        }
+        .gps-denied .denied-icon {
+            font-size: 52px;
+            animation: pulse 1.5s ease-in-out infinite;
+            margin-bottom: 16px;
+            display: block;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.15); opacity: 0.7; }
+        }
+        .gps-denied h3 { color: var(--danger); font-size: 1.2em; margin-bottom: 10px; }
         .gps-denied p { color: #721c24; font-size: 13px; line-height: 1.7; margin-bottom: 18px; }
-        .gps-retry-btn { background: var(--danger); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+        .gps-retry-btn {
+            background: var(--danger);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
         .gps-retry-btn:hover { background: #b02a37; }
-        .gps-allow-btn { background: var(--secondary); color: white; border: none; padding: 12px 28px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+        .gps-allow-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
+        }
         .gps-allow-btn:hover { background: #005bb5; }
 
         /* AFFORDABILITY GATE */
-        .afford-gate { display: none; max-width: 600px; margin: 32px auto; background: white; border: 1px solid var(--light-border); border-top: 4px solid var(--secondary); border-radius: 8px; padding: 32px 24px; box-shadow: var(--card-shadow); }
+        .afford-gate {
+            display: none;
+            max-width: 600px;
+            margin: 32px auto;
+            background: white;
+            border: 1px solid var(--light-border);
+            border-top: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 32px 24px;
+            box-shadow: var(--card-shadow);
+        }
         .afford-gate h2 { color: var(--primary); font-size: 1.15em; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-        .location-text { background: var(--accent); border-left: 4px solid var(--secondary); border-radius: 0 6px 6px 0; padding: 16px 18px; font-size: 14px; color: #333; line-height: 1.8; margin-bottom: 28px; }
+        .location-text {
+            background: var(--accent);
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 6px 6px 0;
+            padding: 16px 18px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
         .location-text strong { color: var(--primary); }
         .afford-question { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 18px; text-align: center; }
         .afford-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto; }
@@ -82,49 +263,61 @@
         .btn-no:hover { background: #fff5f5; transform: translateY(-1px); }
 
         /* NOT ELIGIBLE */
-        .not-eligible { display: none; max-width: 560px; margin: 32px auto; background: white; border: 1px solid var(--light-border); border-top: 4px solid var(--danger); border-radius: 8px; padding: 32px 24px; box-shadow: var(--card-shadow); text-align: center; }
+        .not-eligible {
+            display: none;
+            max-width: 560px;
+            margin: 32px auto;
+            background: white;
+            border: 1px solid var(--light-border);
+            border-top: 4px solid var(--danger);
+            border-radius: 8px;
+            padding: 32px 24px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+        }
         .not-eligible .icon { font-size: 40px; margin-bottom: 16px; display: block; }
         .not-eligible h3 { color: var(--primary); font-size: 1.1em; margin-bottom: 12px; }
         .not-eligible p { color: #555; font-size: 14px; line-height: 1.8; margin-bottom: 10px; }
-        .btn-restart { display: inline-block; margin-top: 20px; background: var(--secondary); color: white; border: none; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; transition: background 0.2s; }
+        .btn-restart {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
         .btn-restart:hover { background: #005bb5; }
 
         /* FORM */
         .form-container { display: none; max-width: 800px; margin: 0 auto; background: white; }
         iframe { width: 100%; height: 100vh; border: none; display: block; }
 
-        /* THANK YOU */
-        .thank-you { display: none; max-width: 680px; margin: 40px auto; padding: 0 16px 60px; text-align: center; }
-        .ty-icon { width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary), #00c6ff); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 36px; margin: 0 auto 24px; box-shadow: 0 4px 20px rgba(0,118,214,0.3); animation: popIn 0.6s ease-out; }
-        @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.1); } 100% { transform: scale(1); opacity: 1; } }
-        .ty-badge { display: inline-block; background: #eafaf1; color: var(--success); border: 1px solid #a9dfbf; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 16px; }
-        .thank-you h1 { color: var(--primary); font-size: 1.7em; margin-bottom: 12px; line-height: 1.3; }
-        .thank-you .ty-sub { color: #555; font-size: 15px; max-width: 500px; margin: 0 auto 32px; line-height: 1.8; }
-        .ty-email-notice { background: var(--accent); border: 1px solid #c8dff7; border-radius: 8px; padding: 18px 20px; font-size: 14px; color: var(--primary); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; text-align: left; }
-        .ty-email-notice span { font-size: 24px; flex-shrink: 0; }
-        .next-steps { background: white; border: 1px solid var(--light-border); border-top: 4px solid var(--secondary); border-radius: 8px; padding: 28px 24px; box-shadow: var(--card-shadow); text-align: left; margin-bottom: 24px; }
-        .next-steps h2 { color: var(--primary); font-size: 1.1em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--light-border); }
-        .step-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-        .step-num { background: var(--secondary); color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; }
-        .step-content h4 { color: var(--primary); font-size: 14px; margin-bottom: 4px; }
-        .step-content p { color: #666; font-size: 13px; line-height: 1.6; }
-        .coordinator-box { background: var(--accent); border-radius: 8px; padding: 20px; margin-top: 24px; border: 1px solid #c8dff7; }
-        .coordinator-box h3 { color: var(--primary); font-size: 14px; margin-bottom: 14px; font-weight: 700; }
-        .coordinator-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #444; }
-        .coordinator-item span { font-size: 18px; }
-        .coordinator-placeholder { color: #888; font-style: italic; font-size: 12px; }
-        .ty-share { background: #25D366; color: white; border: none; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer; width: 100%; max-width: 360px; margin: 0 auto; display: block; transition: background 0.2s; text-decoration: none; text-align: center; }
-        .ty-share:hover { background: #1da851; }
-
-        /* FEEDBACK TAB */
-        .feedback-tab { position: fixed; right: 0; top: 50%; transform: translateY(-50%) rotate(-90deg); transform-origin: right bottom; background-color: var(--secondary); color: white; padding: 8px 18px; font-size: 13px; font-weight: 700; text-decoration: none; border-radius: 6px 6px 0 0; z-index: 9999; }
-
         /* RANDSTAD FOOTER */
         .randstad-footer { background-color: #00214c; color: #fff; font-size: 14px; margin-top: 40px; }
         .footer-inner { max-width: 900px; margin: 0 auto; padding: 0 20px 30px; }
         .footer-sections { border-top: 1px solid rgba(255,255,255,0.15); }
         .footer-section { border-bottom: 1px solid rgba(255,255,255,0.12); }
-        .footer-section-btn { width: 100%; background: none; border: none; color: white; font-size: 15px; font-weight: 600; padding: 18px 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; letter-spacing: 0.2px; transition: opacity 0.2s; }
+        .footer-section-btn {
+            width: 100%;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 18px 0;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 0.2px;
+            transition: opacity 0.2s;
+        }
         .footer-section-btn:hover { opacity: 0.8; }
         .footer-section-btn .arrow { font-size: 13px; color: rgba(255,255,255,0.5); transition: transform 0.3s; display: inline-block; }
         .footer-section-btn.open .arrow { transform: rotate(180deg); }
@@ -139,10 +332,38 @@
         .footer-legal-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; transition: color 0.2s; }
         .footer-legal-links a:hover { color: white; }
         .footer-social { display: flex; gap: 12px; }
-        .social-icon { display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.15); width: 36px; height: 36px; border-radius: 50%; font-size: 13px; font-weight: bold; color: white; text-decoration: none; transition: background 0.2s; }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.15);
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
         .social-icon:hover { background: #0076d6; }
         .footer-company-info { color: rgba(255,255,255,0.45); font-size: 12px; line-height: 1.9; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; }
         .footer-company-info p { margin-bottom: 4px; }
+
+        /* FEEDBACK TAB */
+        .feedback-tab {
+            position: fixed;
+            right: 0; top: 50%;
+            transform: translateY(-50%) rotate(-90deg);
+            transform-origin: right bottom;
+            background-color: var(--secondary);
+            color: white;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 6px 6px 0 0;
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
@@ -194,8 +415,7 @@
         </div>
     </div>
     <div class="gps-banner waiting" id="gpsBanner">
-        📍 This application requires your location to verify eligibility.
-        <br><br>
+        📍 This application requires your location to verify eligibility.<br><br>
         <button class="gps-allow-btn" onclick="getLocation()">📍 Allow Location Access</button>
     </div>
     <div class="gps-denied" id="gpsDenied">
@@ -232,50 +452,7 @@
     <iframe id="jotformFrame" src="about:blank" title="Canada Work Placement Application"></iframe>
 </div>
 
-<!-- THANK YOU PAGE (fallback if postMessage works) -->
-<div class="thank-you" id="thankYouPage">
-    <div class="ty-icon">🍁</div>
-    <div class="ty-badge">✔ APPLICATION SUBMITTED</div>
-    <h1>Your Application Has Been Received!</h1>
-    <p class="ty-sub">Thank you for taking this important step toward building your future in Canada. Your application has been successfully submitted to our team and is now under active review.</p>
-    <div class="ty-email-notice">
-        <span>📧</span>
-        <div><strong>A copy of your application has been sent to your email address.</strong> Please check your inbox — including your spam or junk folder — and keep it safe for your records.</div>
-    </div>
-    <div class="next-steps">
-        <h2>📌 What Happens Next</h2>
-        <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-content">
-                <h4>Application Review</h4>
-                <p>Our specialists will carefully review your submitted details. This process typically takes 1 to 3 business days.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-content">
-                <h4>Contact Your Regional Coordinator</h4>
-                <p>To accelerate your application and receive personalized guidance, please reach out to the Program Coordinator assigned to your region using the contact details below.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-content">
-                <h4>Documentation & Next Steps</h4>
-                <p>Once your application is approved, your coordinator will guide you through document submission, medical examination scheduling, and visa facilitation.</p>
-            </div>
-        </div>
-        <div class="coordinator-box">
-            <h3>🌍 Your Regional Program Coordinator</h3>
-            <div class="coordinator-item"><span>📍</span><span class="coordinator-placeholder">[Coordinator Address — To be added]</span></div>
-            <div class="coordinator-item"><span>📧</span><span class="coordinator-placeholder">[Coordinator Email — To be added]</span></div>
-            <div class="coordinator-item"><span>💬</span><span class="coordinator-placeholder">[WhatsApp Number — To be added]</span></div>
-        </div>
-    </div>
-    <a href="https://wa.me/?text=Hi!%20I%20just%20submitted%20my%20application%20for%20the%20Workforce%20Mobility%20%26%20Employment%20Program%202026%20with%20Randstad%20Canada.%20Apply%20here%3A%20https://apply.randstadca.com" class="ty-share" target="_blank" rel="noopener">💬 Share This Opportunity on WhatsApp</a>
-</div>
-
-<!-- RANDSTAD FOOTER -->
+<!-- FOOTER -->
 <footer class="randstad-footer">
     <div class="footer-inner">
         <div class="footer-sections">
@@ -373,18 +550,25 @@
     var detectedAddress = '';
     var detectedCountry = '';
 
-    function openMenu() { document.getElementById('menuOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeMenu() { document.getElementById('menuOverlay').classList.remove('open'); document.body.style.overflow = ''; }
-
+    function openMenu() {
+        document.getElementById('menuOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+        document.getElementById('menuOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+    }
     function scrollToForm() {
         var target = document.getElementById('formContainer');
-        if (target.style.display !== 'none' && target.style.display !== '') {
+        if (target.style.display === 'block') {
             target.scrollIntoView({ behavior: 'smooth' });
         } else {
-            document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
+            var gate = document.getElementById('affordGate');
+            if (gate.style.display === 'block') {
+                gate.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     }
-
     function toggleSection(btn) {
         btn.classList.toggle('open');
         var links = btn.nextElementSibling;
@@ -440,14 +624,18 @@
     function getRegion(country) { return regionMap[country] || 'International'; }
 
     function getConditionsText(region) {
-        return 'For candidates applying from <strong>' + region + '</strong>, note that the following conditions apply: A processing and placement fee of up to <strong>$9,000 CAD</strong> is required, covering visa facilitation, medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
+        return 'For candidates applying from <strong>' + region + '</strong>, note that the following conditions apply: ' +
+            'A processing and placement fee of up to <strong>$9,000 CAD</strong> is required, covering visa facilitation, ' +
+            'medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
     }
 
     function showAffordGate(address, region) {
         var text = '<strong>📍 Your location is:</strong> ' + address + '<br><br>' + getConditionsText(region);
         document.getElementById('locationText').innerHTML = text;
         document.getElementById('affordGate').style.display = 'block';
-        setTimeout(function() { document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' }); }, 300);
+        setTimeout(function() {
+            document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
 
     function loadForm() {
@@ -456,8 +644,12 @@
         var encodedAddress = encodeURIComponent(detectedAddress);
         var encodedConditions = encodeURIComponent(conditions);
         document.getElementById('formContainer').style.display = 'block';
-        document.getElementById('jotformFrame').src = 'https://form.jotform.com/261934634754566?currentLocation99=' + encodedAddress + '&applicationConditions=' + encodedConditions;
-        setTimeout(function() { document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' }); }, 300);
+        document.getElementById('jotformFrame').src =
+            'https://form.jotform.com/261934634754566?currentLocation99=' + encodedAddress +
+            '&applicationConditions=' + encodedConditions;
+        setTimeout(function() {
+            document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
 
     function userCanAfford() {
@@ -468,13 +660,17 @@
     function userCannotAfford() {
         document.getElementById('affordGate').style.display = 'none';
         document.getElementById('notEligible').style.display = 'block';
-        setTimeout(function() { document.getElementById('notEligible').scrollIntoView({ behavior: 'smooth' }); }, 300);
+        setTimeout(function() {
+            document.getElementById('notEligible').scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
 
     function restartForm() {
         document.getElementById('notEligible').style.display = 'none';
         document.getElementById('affordGate').style.display = 'block';
-        setTimeout(function() { document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' }); }, 300);
+        setTimeout(function() {
+            document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
+        }, 300);
     }
 
     function showProgress() {
@@ -486,12 +682,17 @@
         fill.style.animation = 'progressAnim 3s ease-in-out forwards';
     }
 
-    function hideProgress() { document.getElementById('progressWrap').style.display = 'none'; }
+    function hideProgress() {
+        document.getElementById('progressWrap').style.display = 'none';
+    }
 
     function retryLocation() {
         document.getElementById('gpsDenied').style.display = 'none';
         document.getElementById('gpsBanner').style.display = 'block';
-        document.getElementById('gpsBanner').innerHTML = '📍 Please allow location access when your browser asks.<br><br><button class="gps-allow-btn" onclick="getLocation()">📍 Try Again</button>';
+        document.getElementById('gpsBanner').className = 'gps-banner waiting';
+        document.getElementById('gpsBanner').innerHTML =
+            '📍 Please allow location access when your browser asks.<br><br>' +
+            '<button class="gps-allow-btn" onclick="getLocation()">📍 Try Again</button>';
     }
 
     function getLocation() {
@@ -536,14 +737,6 @@
             { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
         );
     }
-
-    window.addEventListener('message', function(event) {
-        if (event.data && (event.data.action === 'submission-completed' || event.data === 'submittedJotForm')) {
-            document.getElementById('formContainer').style.display = 'none';
-            document.getElementById('thankYouPage').style.display = 'block';
-            document.getElementById('thankYouPage').scrollIntoView({ behavior: 'smooth' });
-        }
-    });
 
     window.onload = function() { getLocation(); };
 </script>
