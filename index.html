@@ -10,7 +10,6 @@
             --secondary: #0076d6;
             --success: #28a745;
             --danger: #dc3545;
-            --warning: #ffc107;
             --text: #333;
             --light-border: #e8e8e8;
             --accent: #f2f7ff;
@@ -23,7 +22,7 @@
         .top-bar {
             background: white;
             padding: 0 20px;
-            height: 64px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -33,14 +32,14 @@
             z-index: 200;
             box-shadow: 0 1px 4px rgba(0,0,0,0.06);
         }
-        .logo { height: 32px; width: auto; }
+        .logo { height: 96px; width: auto; }
         .hamburger {
             background: none;
             border: none;
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             padding: 8px;
             border-radius: 4px;
             transition: background 0.2s;
@@ -48,7 +47,7 @@
         .hamburger:hover { background: var(--accent); }
         .hamburger span {
             display: block;
-            width: 22px;
+            width: 26px;
             height: 2px;
             background: var(--secondary);
             border-radius: 2px;
@@ -72,7 +71,7 @@
             padding: 16px 20px;
             border-bottom: 2px solid var(--secondary);
         }
-        .menu-logo { height: 28px; }
+        .menu-logo { height: 60px; }
         .menu-close {
             background: none;
             border: none;
@@ -80,8 +79,7 @@
             cursor: pointer;
             color: var(--secondary);
             font-weight: bold;
-            width: 36px;
-            height: 36px;
+            width: 36px; height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -104,17 +102,37 @@
         .menu-item.highlight a { color: var(--secondary); font-weight: bold; }
         .menu-item a span { color: #bbb; font-size: 12px; }
 
-        /* HEADER */
+        /* HEADER — image clear, text overlay only */
         header {
-            background-image: linear-gradient(rgba(0,33,76,0.72), rgba(0,33,76,0.72)), url('1000024576.jpg');
+            background-image: url('1000024576.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 70px 20px 60px;
             text-align: center;
+            position: relative;
         }
-        header h1 { font-size: 1.7em; font-weight: 700; margin-bottom: 14px; line-height: 1.3; }
-        header p { margin: 0 auto 24px; max-width: 580px; opacity: 0.88; font-size: 1em; }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        header h1 {
+            font-size: 1.7em;
+            font-weight: 700;
+            margin-bottom: 14px;
+            line-height: 1.3;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.7);
+        }
+        header p {
+            margin: 0 auto 24px;
+            max-width: 580px;
+            font-size: 1em;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
         .btn-home {
             display: inline-block;
             background: var(--secondary);
@@ -125,6 +143,7 @@
             text-decoration: none;
             font-size: 14px;
             transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
         .btn-home:hover { background: #005bb5; }
 
@@ -152,7 +171,6 @@
             background: linear-gradient(90deg, var(--secondary), #00c6ff);
             border-radius: 20px;
             width: 0%;
-            animation: progressAnim 3s ease-in-out forwards;
         }
         @keyframes progressAnim {
             0% { width: 0%; }
@@ -220,13 +238,14 @@
             background: var(--secondary);
             color: white;
             border: none;
-            padding: 12px 28px;
+            padding: 14px 32px;
             border-radius: 6px;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 15px;
             cursor: pointer;
-            margin-top: 8px;
+            margin-top: 10px;
             transition: background 0.2s;
+            display: inline-block;
         }
         .gps-allow-btn:hover { background: #005bb5; }
 
@@ -333,16 +352,12 @@
         .footer-legal-links a:hover { color: white; }
         .footer-social { display: flex; gap: 12px; }
         .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             background: rgba(255,255,255,0.15);
             width: 36px; height: 36px;
             border-radius: 50%;
-            font-size: 13px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
+            font-size: 13px; font-weight: bold;
+            color: white; text-decoration: none;
             transition: background 0.2s;
         }
         .social-icon:hover { background: #0076d6; }
@@ -374,10 +389,10 @@
 <div class="menu-overlay" id="menuOverlay">
     <div class="menu-header">
         <img src="1000024556.jpg" alt="Randstad Logo" class="menu-logo">
-        <button class="menu-close" onclick="closeMenu()">✕</button>
+        <button class="menu-close" id="menuCloseBtn">✕</button>
     </div>
     <div class="menu-item highlight">
-        <a href="#" onclick="closeMenu(); scrollToForm(); return false;">🍁 workforce mobility 2026 <span>→</span></a>
+        <a href="#" id="mobilityLink">🍁 workforce mobility 2026 <span>→</span></a>
     </div>
     <div class="menu-item"><a href="https://www.randstad.com/find-a-job/" target="_blank" rel="noopener">find a job <span>∨</span></a></div>
     <div class="menu-item"><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">for talent <span>∨</span></a></div>
@@ -391,16 +406,18 @@
 <!-- TOP BAR -->
 <div class="top-bar">
     <img src="1000024556.jpg" alt="Randstad Logo" class="logo">
-    <button class="hamburger" onclick="openMenu()">
+    <button class="hamburger" id="hamburgerBtn">
         <span></span><span></span><span></span>
     </button>
 </div>
 
 <!-- HEADER -->
 <header>
-    <h1>🍁 Work in Canada With Randstad — Apply Now</h1>
-    <p>Secure a verified job in Canada through Randstad — one of the world's top staffing agencies. Complete the form below to begin your application.</p>
-    <a href="https://www.randstad.com/" class="btn-home" target="_blank" rel="noopener">Return to Homepage</a>
+    <div class="header-content">
+        <h1>🍁 Work in Canada With Randstad — Apply Now</h1>
+        <p>Secure a verified job in Canada through Randstad — one of the world's top staffing agencies. Complete the form below to begin your application.</p>
+        <a href="https://www.randstad.com/" class="btn-home" target="_blank" rel="noopener">Return to Homepage</a>
+    </div>
 </header>
 
 <!-- GPS SECTION -->
@@ -415,14 +432,14 @@
         </div>
     </div>
     <div class="gps-banner waiting" id="gpsBanner">
-        📍 This application requires your location to verify eligibility.<br><br>
-        <button class="gps-allow-btn" onclick="getLocation()">📍 Allow Location Access</button>
+        📍 This application requires your location to verify regional eligibility.<br><br>
+        <button class="gps-allow-btn" id="gpsBtn">📍 Allow Location Access</button>
     </div>
     <div class="gps-denied" id="gpsDenied">
         <span class="denied-icon">📵</span>
         <h3>Location Access Required</h3>
         <p>You have denied location access or it is disabled on your device. This application <strong>requires your GPS location</strong> to verify regional eligibility before you can proceed.<br><br>Please enable location access in your browser settings and try again.</p>
-        <button class="gps-retry-btn" onclick="retryLocation()">🔄 Retry Location Access</button>
+        <button class="gps-retry-btn" id="retryBtn">🔄 Retry Location Access</button>
     </div>
 </div>
 
@@ -432,8 +449,8 @@
     <div class="location-text" id="locationText"></div>
     <div class="afford-question">Are you able to cover this fee to proceed with your application?</div>
     <div class="afford-buttons">
-        <button class="btn-afford btn-yes" onclick="userCanAfford()">✅ Yes, I can afford this fee</button>
-        <button class="btn-afford btn-no" onclick="userCannotAfford()">❌ No, I cannot afford this fee</button>
+        <button class="btn-afford btn-yes" id="yesBtn">✅ Yes, I can afford this fee</button>
+        <button class="btn-afford btn-no" id="noBtn">❌ No, I cannot afford this fee</button>
     </div>
 </div>
 
@@ -444,7 +461,7 @@
     <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement fee of <strong>$9,000 CAD</strong>.</p>
     <p>This fee covers essential services including visa facilitation, medical examination, and travel coordination. We encourage you to continue saving toward this goal.</p>
     <p>We sincerely wish you the very best in your journey ahead.</p>
-    <button class="btn-restart" onclick="restartForm()">💳 I Have the Funds — Restart Application</button>
+    <button class="btn-restart" id="restartBtn">💳 I Have the Funds — Restart Application</button>
 </div>
 
 <!-- FORM -->
@@ -457,7 +474,7 @@
     <div class="footer-inner">
         <div class="footer-sections">
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">find a job <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">find a job <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/jobs/" target="_blank" rel="noopener">all jobs</a></li>
                     <li><a href="https://www.randstad.com/career-advice/" target="_blank" rel="noopener">career advice</a></li>
@@ -465,7 +482,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">for talents <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">for talents <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/operational-career/" target="_blank" rel="noopener">operational career</a></li>
                     <li><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">professional career</a></li>
@@ -474,7 +491,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">for employers <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">for employers <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/hr-services/staffing/" target="_blank" rel="noopener">staffing solutions</a></li>
                     <li><a href="https://www.randstad.com/hr-services/inhouse/" target="_blank" rel="noopener">inhouse solutions</a></li>
@@ -487,7 +504,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">investors <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">investors <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/investor-relations/investment-case/" target="_blank" rel="noopener">investment case</a></li>
                     <li><a href="https://www.randstad.com/investor-relations/results-and-reports/" target="_blank" rel="noopener">results and reports</a></li>
@@ -496,7 +513,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">press <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">press <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/press/all-articles/" target="_blank" rel="noopener">press releases</a></li>
                     <li><a href="https://www.randstad.com/press/" target="_blank" rel="noopener">news and events</a></li>
@@ -504,7 +521,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">about Randstad <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">about Randstad <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/about-randstad/company-profile/" target="_blank" rel="noopener">company profile</a></li>
                     <li><a href="https://www.randstad.com/about-randstad/sustainability/" target="_blank" rel="noopener">sustainability</a></li>
@@ -515,7 +532,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">about this website <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">about this website <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/disclaimer/" target="_blank" rel="noopener">disclaimer</a></li>
                 </ul>
@@ -550,15 +567,19 @@
     var detectedAddress = '';
     var detectedCountry = '';
 
-    function openMenu() {
+    // ── MENU ──
+    document.getElementById('hamburgerBtn').addEventListener('click', function() {
         document.getElementById('menuOverlay').classList.add('open');
         document.body.style.overflow = 'hidden';
-    }
-    function closeMenu() {
+    });
+    document.getElementById('menuCloseBtn').addEventListener('click', function() {
         document.getElementById('menuOverlay').classList.remove('open');
         document.body.style.overflow = '';
-    }
-    function scrollToForm() {
+    });
+    document.getElementById('mobilityLink').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('menuOverlay').classList.remove('open');
+        document.body.style.overflow = '';
         var target = document.getElementById('formContainer');
         if (target.style.display === 'block') {
             target.scrollIntoView({ behavior: 'smooth' });
@@ -566,15 +587,22 @@
             var gate = document.getElementById('affordGate');
             if (gate.style.display === 'block') {
                 gate.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                document.getElementById('gpsSection').scrollIntoView({ behavior: 'smooth' });
             }
         }
-    }
-    function toggleSection(btn) {
-        btn.classList.toggle('open');
-        var links = btn.nextElementSibling;
-        links.classList.toggle('open');
-    }
+    });
 
+    // ── FOOTER SECTIONS ──
+    document.querySelectorAll('.footer-section-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('open');
+            var links = this.nextElementSibling;
+            links.classList.toggle('open');
+        });
+    });
+
+    // ── REGION MAP ──
     var regionMap = {
         'Ghana': 'West Africa', 'Nigeria': 'West Africa', 'Senegal': 'West Africa',
         'Ivory Coast': 'West Africa', 'Côte d\'Ivoire': 'West Africa',
@@ -623,14 +651,11 @@
 
     function getRegion(country) { return regionMap[country] || 'International'; }
 
-    function getConditionsText(region) {
-        return 'For candidates applying from <strong>' + region + '</strong>, note that the following conditions apply: ' +
+    function showAffordGate(address, region) {
+        var text = '<strong>📍 Your location is:</strong> ' + address + '<br><br>' +
+            'For candidates applying from <strong>' + region + '</strong>, note that the following conditions apply: ' +
             'A processing and placement fee of up to <strong>$9,000 CAD</strong> is required, covering visa facilitation, ' +
             'medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
-    }
-
-    function showAffordGate(address, region) {
-        var text = '<strong>📍 Your location is:</strong> ' + address + '<br><br>' + getConditionsText(region);
         document.getElementById('locationText').innerHTML = text;
         document.getElementById('affordGate').style.display = 'block';
         setTimeout(function() {
@@ -652,27 +677,27 @@
         }, 300);
     }
 
-    function userCanAfford() {
+    // ── AFFORDABILITY BUTTONS ──
+    document.getElementById('yesBtn').addEventListener('click', function() {
         document.getElementById('affordGate').style.display = 'none';
         loadForm();
-    }
-
-    function userCannotAfford() {
+    });
+    document.getElementById('noBtn').addEventListener('click', function() {
         document.getElementById('affordGate').style.display = 'none';
         document.getElementById('notEligible').style.display = 'block';
         setTimeout(function() {
             document.getElementById('notEligible').scrollIntoView({ behavior: 'smooth' });
         }, 300);
-    }
-
-    function restartForm() {
+    });
+    document.getElementById('restartBtn').addEventListener('click', function() {
         document.getElementById('notEligible').style.display = 'none';
         document.getElementById('affordGate').style.display = 'block';
         setTimeout(function() {
             document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
         }, 300);
-    }
+    });
 
+    // ── GPS ──
     function showProgress() {
         document.getElementById('gpsBanner').style.display = 'none';
         document.getElementById('progressWrap').style.display = 'block';
@@ -681,7 +706,6 @@
         fill.offsetHeight;
         fill.style.animation = 'progressAnim 3s ease-in-out forwards';
     }
-
     function hideProgress() {
         document.getElementById('progressWrap').style.display = 'none';
     }
@@ -692,13 +716,16 @@
         document.getElementById('gpsBanner').className = 'gps-banner waiting';
         document.getElementById('gpsBanner').innerHTML =
             '📍 Please allow location access when your browser asks.<br><br>' +
-            '<button class="gps-allow-btn" onclick="getLocation()">📍 Try Again</button>';
+            '<button class="gps-allow-btn" id="gpsBtn2">📍 Try Again</button>';
+        document.getElementById('gpsBtn2').addEventListener('click', getLocation);
     }
+    document.getElementById('retryBtn').addEventListener('click', retryLocation);
 
     function getLocation() {
         showProgress();
         if (!navigator.geolocation) {
             hideProgress();
+            document.getElementById('gpsBanner').style.display = 'none';
             document.getElementById('gpsDenied').style.display = 'block';
             return;
         }
@@ -732,13 +759,15 @@
                 hideProgress();
                 document.getElementById('gpsBanner').style.display = 'none';
                 document.getElementById('gpsDenied').style.display = 'block';
-                document.getElementById('gpsDenied').scrollIntoView({ behavior: 'smooth' });
+                setTimeout(function() {
+                    document.getElementById('gpsDenied').scrollIntoView({ behavior: 'smooth' });
+                }, 300);
             },
-            { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
         );
     }
 
-    window.onload = function() { getLocation(); };
+    document.getElementById('gpsBtn').addEventListener('click', getLocation);
 </script>
 
 </body>
