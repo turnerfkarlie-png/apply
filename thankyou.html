@@ -20,7 +20,7 @@
         .top-bar {
             background: white;
             padding: 0 20px;
-            height: 64px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -30,20 +30,20 @@
             z-index: 200;
             box-shadow: 0 1px 4px rgba(0,0,0,0.06);
         }
-        .logo { height: 32px; width: auto; }
+        .logo { height: 96px; width: auto; }
         .hamburger {
             background: none;
             border: none;
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             padding: 8px;
             border-radius: 4px;
             transition: background 0.2s;
         }
         .hamburger:hover { background: var(--accent); }
-        .hamburger span { display: block; width: 22px; height: 2px; background: var(--secondary); border-radius: 2px; }
+        .hamburger span { display: block; width: 26px; height: 2px; background: var(--secondary); border-radius: 2px; }
 
         /* MENU OVERLAY */
         .menu-overlay {
@@ -63,7 +63,7 @@
             padding: 16px 20px;
             border-bottom: 2px solid var(--secondary);
         }
-        .menu-logo { height: 28px; }
+        .menu-logo { height: 60px; }
         .menu-close {
             background: none;
             border: none;
@@ -72,9 +72,7 @@
             color: var(--secondary);
             font-weight: bold;
             width: 36px; height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             border-radius: 50%;
             transition: background 0.2s;
         }
@@ -96,15 +94,32 @@
 
         /* HEADER */
         header {
-            background-image: linear-gradient(rgba(0,33,76,0.72), rgba(0,33,76,0.72)), url('1000024576.jpg');
+            background-image: url('1000024576.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 50px 20px 40px;
             text-align: center;
+            position: relative;
         }
-        header h1 { font-size: 1.4em; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
-        header p { margin: 0 auto; max-width: 500px; opacity: 0.85; font-size: 0.9em; }
+        .header-content { position: relative; z-index: 2; }
+        header h1 {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.7);
+        }
+        header p {
+            margin: 0 auto;
+            max-width: 500px;
+            font-size: 0.9em;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 6px;
+        }
 
         /* THANK YOU CONTENT */
         .page-wrap { max-width: 680px; margin: 40px auto; padding: 0 16px 60px; text-align: center; }
@@ -179,23 +194,6 @@
         .coordinator-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #444; }
         .coordinator-item span { font-size: 18px; }
         .coordinator-placeholder { color: #888; font-style: italic; font-size: 12px; }
-        .ty-share {
-            background: #25D366;
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 14px;
-            width: 100%;
-            max-width: 360px;
-            margin: 0 auto;
-            display: block;
-            transition: background 0.2s;
-            text-decoration: none;
-            text-align: center;
-        }
-        .ty-share:hover { background: #1da851; }
 
         /* RANDSTAD FOOTER */
         .randstad-footer { background-color: #00214c; color: #fff; font-size: 14px; margin-top: 40px; }
@@ -270,7 +268,7 @@
 <div class="menu-overlay" id="menuOverlay">
     <div class="menu-header">
         <img src="1000024556.jpg" alt="Randstad Logo" class="menu-logo">
-        <button class="menu-close" onclick="closeMenu()">✕</button>
+        <button class="menu-close" id="menuCloseBtn">✕</button>
     </div>
     <div class="menu-item highlight">
         <a href="https://apply.randstadca.com">🍁 workforce mobility 2026 <span>→</span></a>
@@ -287,15 +285,17 @@
 <!-- TOP BAR -->
 <div class="top-bar">
     <img src="1000024556.jpg" alt="Randstad Logo" class="logo">
-    <button class="hamburger" onclick="openMenu()">
+    <button class="hamburger" id="hamburgerBtn">
         <span></span><span></span><span></span>
     </button>
 </div>
 
 <!-- HEADER -->
 <header>
-    <h1>🍁 Workforce Mobility & Employment Program 2026</h1>
-    <p>Official Placement Partner — Randstad Canada</p>
+    <div class="header-content">
+        <h1>🍁 Workforce Mobility & Employment Program 2026</h1>
+        <p>Official Placement Partner — Randstad Canada</p>
+    </div>
 </header>
 
 <!-- THANK YOU CONTENT -->
@@ -353,10 +353,6 @@
             </div>
         </div>
     </div>
-    <a href="https://wa.me/?text=Hi!%20I%20just%20submitted%20my%20application%20for%20the%20Workforce%20Mobility%20%26%20Employment%20Program%202026%20with%20Randstad%20Canada.%20Apply%20here%3A%20https://apply.randstadca.com"
-       class="ty-share" target="_blank" rel="noopener">
-        💬 Share This Opportunity on WhatsApp
-    </a>
 </div>
 
 <!-- FOOTER -->
@@ -364,7 +360,7 @@
     <div class="footer-inner">
         <div class="footer-sections">
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">find a job <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">find a job <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/jobs/" target="_blank" rel="noopener">all jobs</a></li>
                     <li><a href="https://www.randstad.com/career-advice/" target="_blank" rel="noopener">career advice</a></li>
@@ -372,7 +368,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">for talents <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">for talents <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/operational-career/" target="_blank" rel="noopener">operational career</a></li>
                     <li><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">professional career</a></li>
@@ -381,7 +377,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">for employers <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">for employers <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/hr-services/staffing/" target="_blank" rel="noopener">staffing solutions</a></li>
                     <li><a href="https://www.randstad.com/hr-services/inhouse/" target="_blank" rel="noopener">inhouse solutions</a></li>
@@ -394,7 +390,7 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">investors <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">investors <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/investor-relations/investment-case/" target="_blank" rel="noopener">investment case</a></li>
                     <li><a href="https://www.randstad.com/investor-relations/results-and-reports/" target="_blank" rel="noopener">results and reports</a></li>
@@ -403,8 +399,16 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <button class="footer-section-btn" onclick="toggleSection(this)">press <span class="arrow">∨</span></button>
+                <button class="footer-section-btn">press <span class="arrow">∨</span></button>
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/press/all-articles/" target="_blank" rel="noopener">press releases</a></li>
                     <li><a href="https://www.randstad.com/press/" target="_blank" rel="noopener">news and events</a></li>
-                    <li><a href="https://www.randstad.com/workforce-insights/future-of-work/" target="_blank" rel
+                    <li><a href="https://www.randstad.com/workforce-insights/future-of-work/" target="_blank" rel="noopener">future of work</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <button class="footer-section-btn">about Randstad <span class="arrow">∨</span></button>
+                <ul class="footer-section-links">
+                    <li><a href="https://www.randstad.com/about-randstad/company-profile/" target="_blank" rel="noopener">company profile</a></li>
+                    <li><a href="https://www.randstad.com/about-randstad/sustainability/" target="_blank" rel="noopener">sustainability</a></li>
+                   
