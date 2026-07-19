@@ -239,7 +239,6 @@
             transition: all 0.2s;
             border: none;
             width: 100%;
-            text-align: center;
         }
         .btn-action-primary {
             background: var(--secondary);
@@ -259,45 +258,6 @@
             display: block;
             margin-top: 2px;
         }
-
-        /* EMAIL POPUP */
-        .email-popup {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 9998;
-            align-items: center;
-            justify-content: center;
-        }
-        .email-popup.show { display: flex; }
-        .email-popup-inner {
-            background: white;
-            border-radius: 12px;
-            padding: 32px 24px;
-            max-width: 340px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-            animation: popIn 0.3s ease-out;
-        }
-        .email-popup-icon { font-size: 48px; margin-bottom: 16px; display: block; }
-        .email-popup-inner h3 { color: var(--primary); font-size: 1.1em; margin-bottom: 10px; }
-        .email-popup-inner p { color: #555; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
-        .email-popup-close {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            width: 100%;
-            transition: background 0.2s;
-        }
-        .email-popup-close:hover { background: #005bb5; }
 
         /* RANDSTAD FOOTER */
         .randstad-footer { background-color: #00214c; color: #fff; font-size: 14px; margin-top: 40px; }
@@ -367,17 +327,6 @@
 <body>
 
 <a href="https://www.randstad.com/contact-us/" class="feedback-tab" target="_blank" rel="noopener">Feedback</a>
-
-<!-- EMAIL POPUP -->
-<div class="email-popup" id="emailPopup">
-    <div class="email-popup-inner">
-        <span class="email-popup-icon">📧</span>
-        <h3>Check Your Email Inbox</h3>
-        <p>Please open your email app and look for a confirmation email from <strong>Randstad Canada — Workforce Mobility Program</strong>.<br><br>
-        If you cannot find it, please also check your <strong>spam or junk folder</strong>. The email contains your application copy and your regional coordinator's contact details.</p>
-        <button class="email-popup-close" id="emailPopupClose">Got It ✓</button>
-    </div>
-</div>
 
 <!-- MENU OVERLAY -->
 <div class="menu-overlay" id="menuOverlay">
@@ -460,7 +409,7 @@
                 🔄 Retake Application
                 <span class="btn-action-desc">Start a fresh application</span>
             </a>
-            <a href="#" class="btn-action btn-action-secondary" id="checkEmailBtn">
+            <a href="mailto:" class="btn-action btn-action-secondary" id="checkEmailBtn">
                 📧 Check Email Confirmation
                 <span class="btn-action-desc">View your application receipt</span>
             </a>
@@ -486,4 +435,25 @@
                     <li><a href="https://www.randstad.com/operational-career/" target="_blank" rel="noopener">operational career</a></li>
                     <li><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">professional career</a></li>
                     <li><a href="https://www.randstaddigital.com/careers/" target="_blank" rel="noopener">digital career</a></li>
-                    <li><a href="https://www.ra
+                    <li><a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <button class="footer-section-btn">for employers <span class="arrow">∨</span></button>
+                <ul class="footer-section-links">
+                    <li><a href="https://www.randstad.com/hr-services/staffing/" target="_blank" rel="noopener">staffing solutions</a></li>
+                    <li><a href="https://www.randstad.com/hr-services/inhouse/" target="_blank" rel="noopener">inhouse solutions</a></li>
+                    <li><a href="https://www.randstad.com/workforce-insights/" target="_blank" rel="noopener">workforce insights</a></li>
+                    <li><a href="https://www.randstad.com/operational-services/" target="_blank" rel="noopener">randstad operational</a></li>
+                    <li><a href="https://www.randstad.com/professional-services/" target="_blank" rel="noopener">randstad professional</a></li>
+                    <li><a href="https://www.randstad.com/hr-services/randstad-enterprise/" target="_blank" rel="noopener">randstad enterprise</a></li>
+                    <li><a href="https://www.randstad.com/hr-services/randstad-digital/" target="_blank" rel="noopener">randstad digital</a></li>
+                    <li><a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <button class="footer-section-btn">investors <span class="arrow">∨</span></button>
+                <ul class="footer-section-links">
+                    <li><a href="https://www.randstad.com/investor-relations/investment-case/" target="_blank" rel="noopener">investment case</a></li>
+                    <li><a href="https://www.randstad.com/investor-relations/results-and-reports/" target="_blank" rel="noopener">results and reports</a></li>
+                    <li><a href="https
