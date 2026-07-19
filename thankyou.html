@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-7684266895"></script>
@@ -13,7 +13,13 @@
       gtag('config', 'AW-7684266895');
     </script>
 
-    <title>
+    <!-- Conversion Event -->
+    <script>
+      gtag('event', 'conversion', {
+        'send_to': 'AW-7684266895'
+      });
+    </script>
+
     <title>Application Submitted | Randstad Canada</title>
     <style>
         :root {
@@ -200,11 +206,58 @@
         }
         .step-content h4 { color: var(--primary); font-size: 14px; margin-bottom: 4px; }
         .step-content p { color: #666; font-size: 13px; line-height: 1.6; }
-        .coordinator-box { background: var(--accent); border-radius: 8px; padding: 20px; margin-top: 24px; border: 1px solid #c8dff7; }
-        .coordinator-box h3 { color: var(--primary); font-size: 14px; margin-bottom: 14px; font-weight: 700; }
-        .coordinator-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 13px; color: #444; }
-        .coordinator-item span { font-size: 18px; }
-        .coordinator-placeholder { color: #888; font-style: italic; font-size: 12px; }
+
+        /* ACTION BUTTONS BOX */
+        .action-box {
+            background: var(--accent);
+            border-radius: 8px;
+            padding: 24px 20px;
+            margin-top: 24px;
+            border: 1px solid #c8dff7;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .action-box h3 {
+            color: var(--primary);
+            font-size: 14px;
+            margin-bottom: 6px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .btn-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            width: 100%;
+        }
+        .btn-action-primary {
+            background: var(--secondary);
+            color: white;
+        }
+        .btn-action-primary:hover { background: #005bb5; transform: translateY(-1px); }
+        .btn-action-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--secondary);
+        }
+        .btn-action-secondary:hover { background: var(--accent); transform: translateY(-1px); }
+        .btn-action-desc {
+            font-size: 12px;
+            font-weight: 400;
+            opacity: 0.85;
+            display: block;
+            margin-top: 2px;
+        }
 
         /* RANDSTAD FOOTER */
         .randstad-footer { background-color: #00214c; color: #fff; font-size: 14px; margin-top: 40px; }
@@ -269,13 +322,7 @@
             border-radius: 6px 6px 0 0;
             z-index: 9999;
         }
-    </style>  <!-- Conversion Event -->
-    <script>
-      gtag('event', 'conversion', {
-        'send_to': 'AW-7684266895'
-      });
-    </script>
-        
+    </style>
 </head>
 <body>
 
@@ -354,20 +401,18 @@
                 <p>Once your application is approved, your coordinator will guide you through document submission, medical examination scheduling, and visa facilitation.</p>
             </div>
         </div>
-        <div class="coordinator-box">
-            <h3>🌍 Your Regional Program Coordinator</h3>
-            <div class="coordinator-item">
-                <span>📍</span>
-                <span class="coordinator-placeholder">[Coordinator Address — To be added]</span>
-            </div>
-            <div class="coordinator-item">
-                <span>📧</span>
-                <span class="coordinator-placeholder">[Coordinator Email — To be added]</span>
-            </div>
-            <div class="coordinator-item">
-                <span>💬</span>
-                <span class="coordinator-placeholder">[WhatsApp Number — To be added]</span>
-            </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-box">
+            <h3>⚡ Quick Actions</h3>
+            <a href="https://apply.randstadca.com" class="btn-action btn-action-primary">
+                🔄 Retake Application
+                <span class="btn-action-desc">Start a fresh application</span>
+            </a>
+            <a href="mailto:" class="btn-action btn-action-secondary" id="checkEmailBtn">
+                📧 Check Email Confirmation
+                <span class="btn-action-desc">View your application receipt</span>
+            </a>
         </div>
     </div>
 </div>
@@ -428,4 +473,69 @@
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/about-randstad/company-profile/" target="_blank" rel="noopener">company profile</a></li>
                     <li><a href="https://www.randstad.com/about-randstad/sustainability/" target="_blank" rel="noopener">sustainability</a></li>
-                   
+                    <li><a href="https://www.randstad.com/about-randstad/equity-diversity-inclusion/" target="_blank" rel="noopener">equity, diversity & inclusion</a></li>
+                    <li><a href="https://www.randstad.com/about-randstad/corporate-governance/" target="_blank" rel="noopener">corporate governance</a></li>
+                    <li><a href="https://www.randstad.com/find-randstad-in-your-country/" target="_blank" rel="noopener">country websites</a></li>
+                    <li><a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <button class="footer-section-btn">about this website <span class="arrow">∨</span></button>
+                <ul class="footer-section-links">
+                    <li><a href="https://www.randstad.com/disclaimer/" target="_blank" rel="noopener">disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-bottom-row">
+            <div class="footer-legal-links">
+                <a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a>
+                <a href="https://www.randstad.com/terms-and-conditions/" target="_blank" rel="noopener">terms & conditions</a>
+                <a href="https://www.randstad.com/accessibility/" target="_blank" rel="noopener">accessibility</a>
+                <a href="https://www.randstad.com/cookies/" target="_blank" rel="noopener">cookies</a>
+                <a href="https://www.randstad.com/your-privacy-explained/" target="_blank" rel="noopener">privacy notice</a>
+                <a href="https://www.randstad.com/about-randstad/corporate-governance/compliance/misconduct-reporting-procedure/" target="_blank" rel="noopener">misconduct reporting</a>
+                <a href="https://www.randstad.com/sitemap/" target="_blank" rel="noopener">sitemap</a>
+                <a href="https://www.randstad.com/misuse-brands-randstad-group/" target="_blank" rel="noopener">misuse of our brands</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/company/randstad/" target="_blank" rel="noopener" class="social-icon">in</a>
+                <a href="https://www.youtube.com/channel/UCdmqTXc-yXEOWPM6eiE4xxw" target="_blank" rel="noopener" class="social-icon">▶</a>
+            </div>
+        </div>
+        <div class="footer-company-info">
+            <p>Randstad N.V.</p>
+            <p>Registered in The Netherlands No: 33216172. Registered office: Diemermere 25, 1112 TC Diemen, The Netherlands.</p>
+            <p>RANDSTAD is a registered trademark of © Randstad N.V. Some images on our website have been generated using AI.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ── MENU ──
+    document.getElementById('hamburgerBtn').addEventListener('click', function() {
+        document.getElementById('menuOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('menuCloseBtn').addEventListener('click', function() {
+        document.getElementById('menuOverlay').classList.remove('open');
+        document.body.style.overflow = '';
+    });
+
+    // ── FOOTER SECTIONS ──
+    document.querySelectorAll('.footer-section-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('open');
+            this.nextElementSibling.classList.toggle('open');
+        });
+    });
+
+    // ── CHECK EMAIL BUTTON ──
+    document.getElementById('checkEmailBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'mailto:';
+    });
+</script>
+
+</body>
+</html>
