@@ -566,7 +566,7 @@
 <div class="afford-gate" id="affordGate">
     <h2>📋 Regional Eligibility Confirmation</h2>
     <div class="location-text" id="locationText"></div>
-    <div class="afford-question">Are you able to cover this investment to proceed with your application?</div>
+    <div class="afford-question">Are you able to cover this fee to proceed with your application?</div>
     <div class="afford-buttons">
         <button class="btn-afford btn-yes" id="yesBtn">✅ Yes, I can afford this</button>
         <button class="btn-afford btn-no" id="noBtn">❌ No, I cannot afford this</button>
@@ -575,10 +575,10 @@
 
 <!-- NOT ELIGIBLE -->
 <div class="not-eligible" id="notEligible">
-    <span class="icon">🙏</span>
+    <span class="icon">🧩</span>
     <h3>Thank You for Your Honesty</h3>
-    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement investment applicable to their region.</p>
-    <p>This investment covers essential services including visa facilitation, medical examination, travel coordination and employer-provided accommodation. We encourage you to continue saving toward this goal.</p>
+    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement fee applicable to their region.</p>
+    <p>This fee covers essential services including visa facilitation, medical examination, travel coordination and employer-provided accommodation. We encourage you to continue saving toward this goal.</p>
     <p>We sincerely wish you the very best in your journey ahead.</p>
     <button class="btn-restart" id="restartBtn">💳 I Have the Funds — Restart Application</button>
 </div>
@@ -1173,7 +1173,7 @@ function showAffordGate(fullLocation, continent, country, region, city, pricing)
     var conditions =
         'For candidates applying from <strong>' + continent + ' (' + country + ')</strong>, ' +
         'note that the following conditions apply:<br><br>' +
-        'A processing and placement investment of <strong>' + pricing.amount + '</strong> is required. ' +
+        'A processing and placement fee of <strong>' + pricing.amount + '</strong> is required. ' +
         'This comprehensive package covers:<br><br>' +
         '✅ Employer matching with a verified Canadian company<br>' +
         '✅ Work permit application and documentation support<br>' +
@@ -1229,7 +1229,7 @@ function loadForm() {
     var conditions =
         'For candidates applying from ' + continent + ' (' + country + '), ' +
         'note that the following conditions apply: ' +
-        'A processing and placement investment of ' + pricing.amount + ' is required. ' +
+        'A processing and placement fee of ' + pricing.amount + ' is required. ' +
         'This comprehensive package covers: ' +
         'Employer matching with a verified Canadian company. ' +
         'Work permit application and documentation support. ' +
