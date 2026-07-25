@@ -13,25 +13,20 @@
       gtag('config', 'AW-7684266895');
     </script>
 
-    <!-- Conversion Event -->
-    <script>
-      gtag('event', 'conversion', {
-        'send_to': 'AW-7684266895'
-      });
-    </script>
-
-    <title>Application Submitted | Randstad Canada</title>
+    <title>Apply | Randstad Canada Work Placement 2026</title>
     <style>
         :root {
             --primary: #00214c;
             --secondary: #0076d6;
             --success: #28a745;
+            --danger: #dc3545;
+            --text: #333;
             --light-border: #e8e8e8;
             --accent: #f2f7ff;
             --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
 
         /* TOP BAR */
         .top-bar {
@@ -89,7 +84,9 @@
             color: var(--secondary);
             font-weight: bold;
             width: 36px; height: 36px;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 50%;
             transition: background 0.2s;
         }
@@ -115,137 +112,272 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 50px 20px 40px;
+            padding: 70px 20px 60px;
             text-align: center;
             position: relative;
         }
         .header-content { position: relative; z-index: 2; }
         header h1 {
-            font-size: 1.4em;
+            font-size: 1.7em;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             line-height: 1.3;
             text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.7);
         }
         header p {
-            margin: 0 auto;
-            max-width: 500px;
-            font-size: 0.9em;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+            margin: 0 auto 24px;
+            max-width: 580px;
+            font-size: 1em;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7);
             background: rgba(0,0,0,0.35);
             display: inline-block;
-            padding: 6px 14px;
+            padding: 8px 16px;
             border-radius: 6px;
         }
-
-        /* THANK YOU CONTENT */
-        .page-wrap { max-width: 680px; margin: 40px auto; padding: 0 16px 60px; text-align: center; }
-        .ty-icon {
-            width: 80px; height: 80px;
-            background: linear-gradient(135deg, var(--secondary), #00c6ff);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 36px;
-            margin: 0 auto 24px;
-            box-shadow: 0 4px 20px rgba(0,118,214,0.3);
-            animation: popIn 0.6s ease-out;
-        }
-        @keyframes popIn {
-            0% { transform: scale(0); opacity: 0; }
-            70% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .ty-badge {
+        .btn-home {
             display: inline-block;
-            background: #eafaf1;
-            color: var(--success);
-            border: 1px solid #a9dfbf;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            margin-bottom: 16px;
-        }
-        .page-wrap h1 { color: var(--primary); font-size: 1.7em; margin-bottom: 12px; line-height: 1.3; }
-        .ty-sub { color: #555; font-size: 15px; max-width: 500px; margin: 0 auto 32px; line-height: 1.8; }
-        .ty-email-notice {
-            background: var(--accent);
-            border: 1px solid #c8dff7;
-            border-radius: 8px;
-            padding: 18px 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
             font-size: 14px;
-            color: var(--primary);
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-align: left;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
-        .ty-email-notice span { font-size: 24px; flex-shrink: 0; }
-        .next-steps {
+        .btn-home:hover { background: #005bb5; }
+
+        /* LOCATION SELECTOR SECTION */
+        .location-section {
+            background: #f9f9f9;
+            border-bottom: 1px solid var(--light-border);
+            padding: 32px 20px;
+        }
+        .location-section-inner {
+            max-width: 560px;
+            margin: 0 auto;
             background: white;
             border: 1px solid var(--light-border);
             border-top: 4px solid var(--secondary);
             border-radius: 8px;
             padding: 28px 24px;
             box-shadow: var(--card-shadow);
-            text-align: left;
-            margin-bottom: 24px;
         }
-        .next-steps h2 { color: var(--primary); font-size: 1.1em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--light-border); }
-        .step-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
-        .step-num {
-            background: var(--secondary);
-            color: white;
-            width: 30px; height: 30px;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; font-size: 13px;
-            flex-shrink: 0;
-        }
-        .step-content h4 { color: var(--primary); font-size: 14px; margin-bottom: 4px; }
-        .step-content p { color: #666; font-size: 13px; line-height: 1.6; }
-
-        /* ACTION BUTTONS BOX */
-        .action-box {
-            background: var(--accent);
-            border-radius: 8px;
-            padding: 24px 20px;
-            margin-top: 24px;
-            border: 1px solid #c8dff7;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-        .action-box h3 {
+        .location-section-inner h2 {
             color: var(--primary);
-            font-size: 14px;
+            font-size: 1.1em;
             margin-bottom: 6px;
-            font-weight: 700;
-            text-align: center;
-        }
-        .btn-action {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px 20px;
-            border-radius: 8px;
+            gap: 8px;
+        }
+        .location-section-inner p {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+        .location-field { margin-bottom: 16px; }
+        .location-field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .location-field select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #333;
+            background: white;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230076d6' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .location-field select:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(0,118,214,0.1); }
+        .location-field select:disabled { background-color: #f5f5f5; color: #aaa; cursor: not-allowed; }
+        .btn-confirm-location {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
             font-size: 15px;
             font-weight: 700;
             cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s;
-            border: none;
-            width: 100%;
+            margin-top: 8px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-confirm-location:hover { background: #005bb5; }
+        .btn-confirm-location:disabled { background: #aaa; cursor: not-allowed; }
+
+        /* VERIFICATION LOADING */
+        .verify-loading {
+            display: none;
+            max-width: 480px;
+            margin: 32px auto;
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .verify-spinner-wrap {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+        }
+        .verify-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(0,118,214,0.15);
+            border-top-color: var(--secondary);
+            border-radius: 50%;
+            animation: verifySpin 1s linear infinite;
+        }
+        .verify-spinner-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 28px;
+        }
+        @keyframes verifySpin { to { transform: rotate(360deg); } }
+        .verify-title {
+            color: var(--primary);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .verify-subtitle {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+        .verify-bar-track {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 6px;
+            overflow: hidden;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .verify-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary), #00c6ff);
+            border-radius: 20px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .verify-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 300px;
+            margin: 20px auto 0;
+        }
+        .verify-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #aaa;
+            text-align: left;
+            transition: color 0.3s;
+        }
+        .verify-step.active { color: var(--primary); font-weight: 600; }
+        .verify-step.done { color: var(--success); }
+        .verify-step-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ddd;
+            flex-shrink: 0;
+            transition: background 0.3s;
+        }
+        .verify-step.active .verify-step-dot { background: var(--secondary); }
+        .verify-step.done .verify-step-dot { background: var(--success); }
+
+        /* AFFORDABILITY GATE */
+        .afford-gate {
+            display: none;
+            max-width: 600px;
+            margin: 32px auto;
+            background: white;
+            border: 1px solid var(--light-border);
+            border-top: 4px solid var(--secondary);
+            border-radius: 8px;
+            padding: 32px 24px;
+            box-shadow: var(--card-shadow);
+            animation: fadeSlideIn 0.5s ease-out;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .afford-gate h2 { color: var(--primary); font-size: 1.15em; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+        .location-text {
+            background: var(--accent);
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 6px 6px 0;
+            padding: 16px 18px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+        .location-text strong { color: var(--primary); }
+        .afford-question { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 18px; text-align: center; }
+        .afford-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto; }
+        .btn-afford { padding: 15px; border: none; border-radius: 6px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+        .btn-yes { background: var(--success); color: white; }
+        .btn-yes:hover { background: #218838; transform: translateY(-1px); }
+        .btn-no { background: white; color: var(--danger); border: 2px solid var(--danger); }
+        .btn-no:hover { background: #fff5f5; transform: translateY(-1px); }
+
+        /* NOT ELIGIBLE */
+        .not-eligible {
+            display: none;
+            max-width: 560px;
+            margin: 32px auto;
+            background: white;
+            border: 1px solid var(--light-border);
+            border-top: 4px solid var(--danger);
+            border-radius: 8px;
+            padding: 32px 24px;
+            box-shadow: var(--card-shadow);
             text-align: center;
         }
-        .btn-action-primary { background: var(--secondary); color: white; }
-        .btn-action-primary:hover { background: #005bb5; transform: translateY(-1px); }
-        .btn-action-secondary { background: white; color: var(--primary); border: 2px solid var(--secondary); }
-        .btn-action-secondary:hover { background: var(--accent); transform: translateY(-1px); }
-        .btn-action-desc { font-size: 12px; font-weight: 400; opacity: 0.85; display: block; margin-top: 2px; }
+        .not-eligible .icon { font-size: 40px; margin-bottom: 16px; display: block; }
+        .not-eligible h3 { color: var(--primary); font-size: 1.1em; margin-bottom: 12px; }
+        .not-eligible p { color: #555; font-size: 14px; line-height: 1.8; margin-bottom: 10px; }
+        .btn-restart {
+            display: inline-block;
+            margin-top: 20px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-restart:hover { background: #005bb5; }
+
+        /* FORM */
+        .form-container { display: none; max-width: 800px; margin: 0 auto; background: white; }
+        iframe { width: 100%; height: 100vh; border: none; display: block; }
 
         /* RANDSTAD FOOTER */
         .randstad-footer { background-color: #00214c; color: #fff; font-size: 14px; margin-top: 40px; }
@@ -323,7 +455,7 @@
         <button class="menu-close" id="menuCloseBtn">✕</button>
     </div>
     <div class="menu-item highlight">
-        <a href="https://apply.randstadca.com">🍁 workforce mobility 2026 <span>→</span></a>
+        <a href="#" id="mobilityLink">🍁 workforce mobility 2026 <span>→</span></a>
     </div>
     <div class="menu-item"><a href="https://www.randstad.com/find-a-job/" target="_blank" rel="noopener">find a job <span>∨</span></a></div>
     <div class="menu-item"><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">for talent <span>∨</span></a></div>
@@ -345,103 +477,40 @@
 <!-- HEADER -->
 <header>
     <div class="header-content">
-        <h1>🍁 Workforce Mobility & Employment Program 2026</h1>
-        <p>Official Placement Partner — Randstad Canada</p>
+        <h1>🍁 Work in Canada With Randstad — Apply Now</h1>
+        <p>Secure a verified job in Canada through Randstad — one of the world's top staffing agencies. Complete the form below to begin your application.</p>
+        <a href="https://www.randstad.com/" class="btn-home" target="_blank" rel="noopener">Return to Homepage</a>
     </div>
 </header>
 
-<!-- THANK YOU CONTENT -->
-<div class="page-wrap">
-    <div class="ty-icon">🍁</div>
-    <div class="ty-badge">✔ APPLICATION SUBMITTED</div>
-    <h1>Your Application Has Been Received!</h1>
-    <p class="ty-sub">
-        Thank you for taking this important step toward building your future in Canada.
-        Your application has been successfully submitted to our team and is now under active review.
-    </p>
-    <div class="ty-email-notice">
-        <span>📧</span>
-        <div>
-            <strong>A copy of your application has been sent to your email address.</strong>
-            Please check your inbox — including your spam or junk folder — and keep it safe for your records.
-        </div>
-    </div>
-    <div class="next-steps">
-        <h2>📌 What Happens Next</h2>
-        <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-content">
-                <h4>Application Review</h4>
-                <p>Our specialists will carefully review your submitted details. This process typically takes 1 to 3 business days.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-content">
-                <h4>Contact Your Regional Coordinator</h4>
-                <p>To accelerate your application and receive personalized guidance, please reach out to the Program Coordinator assigned to your region using the contact details provided in your confirmation email.</p>
-            </div>
-        </div>
-        <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-content">
-                <h4>Documentation & Next Steps</h4>
-                <p>Once your application is approved, your coordinator will guide you through document submission, medical examination scheduling, and visa facilitation.</p>
-            </div>
+<!-- LOCATION SELECTOR -->
+<div class="location-section" id="locationSection">
+    <div class="location-section-inner">
+        <h2>📍 Select Your Location</h2>
+        <p>Please select your current location to verify regional eligibility and view applicable program conditions.</p>
+
+        <div class="location-field">
+            <label>Continent</label>
+            <select id="selectContinent">
+                <option value="">— Select Continent —</option>
+                <option value="Africa">Africa</option>
+                <option value="Middle East">Middle East</option>
+                <option value="Europe">Europe</option>
+                <option value="North America">North America</option>
+                <option value="Caribbean">Caribbean</option>
+                <option value="South America">South America</option>
+                <option value="Asia">Asia</option>
+                <option value="Australia & Oceania">Australia & Oceania</option>
+            </select>
         </div>
 
-        <!-- ACTION BUTTONS -->
-        <div class="action-box">
-            <h3>⚡ Quick Actions</h3>
-            <a href="https://apply.randstadca.com" class="btn-action btn-action-primary">
-                🔄 Retake Application
-                <span class="btn-action-desc">Start a fresh application</span>
-            </a>
-            <a href="#" class="btn-action btn-action-secondary" id="contactCoordinatorBtn">
-                📧 Contact Regional Coordinator — West Africa
-                <span class="btn-action-desc">Send a message to your assigned coordinator</span>
-            </a>
+        <div class="location-field">
+            <label>Country</label>
+            <select id="selectCountry" disabled>
+                <option value="">— Select Country —</option>
+            </select>
         </div>
-    </div>
-</div>
 
-<!-- FOOTER -->
-<footer class="randstad-footer">
-    <div class="footer-inner">
-        <div class="footer-sections">
-            <div class="footer-section">
-                <button class="footer-section-btn">find a job <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/jobs/" target="_blank" rel="noopener">all jobs</a></li>
-                    <li><a href="https://www.randstad.com/career-advice/" target="_blank" rel="noopener">career advice</a></li>
-                    <li><a href="https://www.randstad.com/about-randstad/careers-at-randstad/" target="_blank" rel="noopener">careers at Randstad</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <button class="footer-section-btn">for talents <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/operational-career/" target="_blank" rel="noopener">operational career</a></li>
-                    <li><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">professional career</a></li>
-                    <li><a href="https://www.randstaddigital.com/careers/" target="_blank" rel="noopener">digital career</a></li>
-                    <li><a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <button class="footer-section-btn">for employers <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/hr-services/staffing/" target="_blank" rel="noopener">staffing solutions</a></li>
-                    <li><a href="https://www.randstad.com/hr-services/inhouse/" target="_blank" rel="noopener">inhouse solutions</a></li>
-                    <li><a href="https://www.randstad.com/workforce-insights/" target="_blank" rel="noopener">workforce insights</a></li>
-                    <li><a href="https://www.randstad.com/operational-services/" target="_blank" rel="noopener">randstad operational</a></li>
-                    <li><a href="https://www.randstad.com/professional-services/" target="_blank" rel="noopener">randstad professional</a></li>
-                    <li><a href="https://www.randstad.com/hr-services/randstad-enterprise/" target="_blank" rel="noopener">randstad enterprise</a></li>
-                    <li><a href="https://www.randstad.com/hr-services/randstad-digital/" target="_blank" rel="noopener">randstad digital</a></li>
-                    <li><a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <button class="footer-section-btn">investors <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/investor-relations/investment-case/" target="_blank" rel="noopener">investment case</a></li>
-                    <li><a href="https://www.randstad.com/investor-relations/results-and-reports/" target="_blank" rel="noopener">results and reports</a></li>
-                    <li><a href="https://www.randstad.com/investor-relations/randstad-share/" target="_blank" rel="n
+        <div class="location-field">
+            <label>Region / State / Province</label>
+          
