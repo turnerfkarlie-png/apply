@@ -13,20 +13,25 @@
       gtag('config', 'AW-7684266895');
     </script>
 
-    <title>Apply | Randstad Canada Work Placement 2026</title>
+    <!-- Conversion Event -->
+    <script>
+      gtag('event', 'conversion', {
+        'send_to': 'AW-7684266895'
+      });
+    </script>
+
+    <title>Application Submitted | Randstad Canada</title>
     <style>
         :root {
             --primary: #00214c;
             --secondary: #0076d6;
             --success: #28a745;
-            --danger: #dc3545;
-            --text: #333;
             --light-border: #e8e8e8;
             --accent: #f2f7ff;
             --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
 
         /* TOP BAR */
         .top-bar {
@@ -84,9 +89,7 @@
             color: var(--secondary);
             font-weight: bold;
             width: 36px; height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             border-radius: 50%;
             transition: background 0.2s;
         }
@@ -112,272 +115,137 @@
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 70px 20px 60px;
+            padding: 50px 20px 40px;
             text-align: center;
             position: relative;
         }
         .header-content { position: relative; z-index: 2; }
         header h1 {
-            font-size: 1.7em;
+            font-size: 1.4em;
             font-weight: 700;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             line-height: 1.3;
             text-shadow: 0 2px 8px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.7);
         }
         header p {
-            margin: 0 auto 24px;
-            max-width: 580px;
-            font-size: 1em;
-            text-shadow: 0 1px 6px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7);
+            margin: 0 auto;
+            max-width: 500px;
+            font-size: 0.9em;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.9);
             background: rgba(0,0,0,0.35);
             display: inline-block;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 6px;
         }
-        .btn-home {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 4px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        }
-        .btn-home:hover { background: #005bb5; }
 
-        /* LOCATION SELECTOR SECTION */
-        .location-section {
-            background: #f9f9f9;
-            border-bottom: 1px solid var(--light-border);
-            padding: 32px 20px;
+        /* THANK YOU CONTENT */
+        .page-wrap { max-width: 680px; margin: 40px auto; padding: 0 16px 60px; text-align: center; }
+        .ty-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, var(--secondary), #00c6ff);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 24px;
+            box-shadow: 0 4px 20px rgba(0,118,214,0.3);
+            animation: popIn 0.6s ease-out;
         }
-        .location-section-inner {
-            max-width: 560px;
-            margin: 0 auto;
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .ty-badge {
+            display: inline-block;
+            background: #eafaf1;
+            color: var(--success);
+            border: 1px solid #a9dfbf;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+        .page-wrap h1 { color: var(--primary); font-size: 1.7em; margin-bottom: 12px; line-height: 1.3; }
+        .ty-sub { color: #555; font-size: 15px; max-width: 500px; margin: 0 auto 32px; line-height: 1.8; }
+        .ty-email-notice {
+            background: var(--accent);
+            border: 1px solid #c8dff7;
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-align: left;
+        }
+        .ty-email-notice span { font-size: 24px; flex-shrink: 0; }
+        .next-steps {
             background: white;
             border: 1px solid var(--light-border);
             border-top: 4px solid var(--secondary);
             border-radius: 8px;
             padding: 28px 24px;
             box-shadow: var(--card-shadow);
-        }
-        .location-section-inner h2 {
-            color: var(--primary);
-            font-size: 1.1em;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .location-section-inner p {
-            color: #666;
-            font-size: 13px;
+            text-align: left;
             margin-bottom: 24px;
         }
-        .location-field { margin-bottom: 16px; }
-        .location-field label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 6px;
-        }
-        .location-field select {
-            width: 100%;
-            padding: 12px 14px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 14px;
-            color: #333;
-            background: white;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230076d6' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 14px center;
-            cursor: pointer;
-            transition: border-color 0.2s;
-        }
-        .location-field select:focus { outline: none; border-color: var(--secondary); box-shadow: 0 0 0 3px rgba(0,118,214,0.1); }
-        .location-field select:disabled { background-color: #f5f5f5; color: #aaa; cursor: not-allowed; }
-        .btn-confirm-location {
-            width: 100%;
+        .next-steps h2 { color: var(--primary); font-size: 1.1em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--light-border); }
+        .step-item { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
+        .step-num {
             background: var(--secondary);
             color: white;
-            border: none;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 15px;
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 13px;
+            flex-shrink: 0;
+        }
+        .step-content h4 { color: var(--primary); font-size: 14px; margin-bottom: 4px; }
+        .step-content p { color: #666; font-size: 13px; line-height: 1.6; }
+
+        /* ACTION BUTTONS BOX */
+        .action-box {
+            background: var(--accent);
+            border-radius: 8px;
+            padding: 24px 20px;
+            margin-top: 24px;
+            border: 1px solid #c8dff7;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .action-box h3 {
+            color: var(--primary);
+            font-size: 14px;
+            margin-bottom: 6px;
             font-weight: 700;
-            cursor: pointer;
-            margin-top: 8px;
-            transition: background 0.2s;
+            text-align: center;
+        }
+        .btn-action {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-        }
-        .btn-confirm-location:hover { background: #005bb5; }
-        .btn-confirm-location:disabled { background: #aaa; cursor: not-allowed; }
-
-        /* VERIFICATION LOADING */
-        .verify-loading {
-            display: none;
-            max-width: 480px;
-            margin: 32px auto;
-            text-align: center;
-            padding: 40px 24px;
-        }
-        .verify-spinner-wrap {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-        }
-        .verify-spinner {
-            width: 80px;
-            height: 80px;
-            border: 4px solid rgba(0,118,214,0.15);
-            border-top-color: var(--secondary);
-            border-radius: 50%;
-            animation: verifySpin 1s linear infinite;
-        }
-        .verify-spinner-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 28px;
-        }
-        @keyframes verifySpin { to { transform: rotate(360deg); } }
-        .verify-title {
-            color: var(--primary);
-            font-size: 1.1em;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .verify-subtitle {
-            color: #666;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
-        .verify-bar-track {
-            background: #e0e0e0;
-            border-radius: 20px;
-            height: 6px;
-            overflow: hidden;
-            max-width: 300px;
-            margin: 0 auto;
-        }
-        .verify-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary), #00c6ff);
-            border-radius: 20px;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-        .verify-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            max-width: 300px;
-            margin: 20px auto 0;
-        }
-        .verify-step {
-            display: flex;
-            align-items: center;
             gap: 10px;
-            font-size: 13px;
-            color: #aaa;
-            text-align: left;
-            transition: color 0.3s;
-        }
-        .verify-step.active { color: var(--primary); font-weight: 600; }
-        .verify-step.done { color: var(--success); }
-        .verify-step-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #ddd;
-            flex-shrink: 0;
-            transition: background 0.3s;
-        }
-        .verify-step.active .verify-step-dot { background: var(--secondary); }
-        .verify-step.done .verify-step-dot { background: var(--success); }
-
-        /* AFFORDABILITY GATE */
-        .afford-gate {
-            display: none;
-            max-width: 600px;
-            margin: 32px auto;
-            background: white;
-            border: 1px solid var(--light-border);
-            border-top: 4px solid var(--secondary);
+            padding: 16px 20px;
             border-radius: 8px;
-            padding: 32px 24px;
-            box-shadow: var(--card-shadow);
-            animation: fadeSlideIn 0.5s ease-out;
-        }
-        @keyframes fadeSlideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .afford-gate h2 { color: var(--primary); font-size: 1.15em; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
-        .location-text {
-            background: var(--accent);
-            border-left: 4px solid var(--secondary);
-            border-radius: 0 6px 6px 0;
-            padding: 16px 18px;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 28px;
-        }
-        .location-text strong { color: var(--primary); }
-        .afford-question { font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 18px; text-align: center; }
-        .afford-buttons { display: flex; flex-direction: column; gap: 12px; max-width: 340px; margin: 0 auto; }
-        .btn-afford { padding: 15px; border: none; border-radius: 6px; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
-        .btn-yes { background: var(--success); color: white; }
-        .btn-yes:hover { background: #218838; transform: translateY(-1px); }
-        .btn-no { background: white; color: var(--danger); border: 2px solid var(--danger); }
-        .btn-no:hover { background: #fff5f5; transform: translateY(-1px); }
-
-        /* NOT ELIGIBLE */
-        .not-eligible {
-            display: none;
-            max-width: 560px;
-            margin: 32px auto;
-            background: white;
-            border: 1px solid var(--light-border);
-            border-top: 4px solid var(--danger);
-            border-radius: 8px;
-            padding: 32px 24px;
-            box-shadow: var(--card-shadow);
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            width: 100%;
             text-align: center;
         }
-        .not-eligible .icon { font-size: 40px; margin-bottom: 16px; display: block; }
-        .not-eligible h3 { color: var(--primary); font-size: 1.1em; margin-bottom: 12px; }
-        .not-eligible p { color: #555; font-size: 14px; line-height: 1.8; margin-bottom: 10px; }
-        .btn-restart {
-            display: inline-block;
-            margin-top: 20px;
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .btn-restart:hover { background: #005bb5; }
-
-        /* FORM */
-        .form-container { display: none; max-width: 800px; margin: 0 auto; background: white; }
-        iframe { width: 100%; height: 100vh; border: none; display: block; }
+        .btn-action-primary { background: var(--secondary); color: white; }
+        .btn-action-primary:hover { background: #005bb5; transform: translateY(-1px); }
+        .btn-action-secondary { background: white; color: var(--primary); border: 2px solid var(--secondary); }
+        .btn-action-secondary:hover { background: var(--accent); transform: translateY(-1px); }
+        .btn-action-desc { font-size: 12px; font-weight: 400; opacity: 0.85; display: block; margin-top: 2px; }
 
         /* RANDSTAD FOOTER */
         .randstad-footer { background-color: #00214c; color: #fff; font-size: 14px; margin-top: 40px; }
@@ -455,7 +323,7 @@
         <button class="menu-close" id="menuCloseBtn">✕</button>
     </div>
     <div class="menu-item highlight">
-        <a href="#" id="mobilityLink">🍁 workforce mobility 2026 <span>→</span></a>
+        <a href="https://apply.randstadca.com">🍁 workforce mobility 2026 <span>→</span></a>
     </div>
     <div class="menu-item"><a href="https://www.randstad.com/find-a-job/" target="_blank" rel="noopener">find a job <span>∨</span></a></div>
     <div class="menu-item"><a href="https://www.randstad.com/professional-career/" target="_blank" rel="noopener">for talent <span>∨</span></a></div>
@@ -477,115 +345,64 @@
 <!-- HEADER -->
 <header>
     <div class="header-content">
-        <h1>🍁 Work in Canada With Randstad — Apply Now</h1>
-        <p>Secure a verified job in Canada through Randstad — one of the world's top staffing agencies. Complete the form below to begin your application.</p>
-        <a href="https://www.randstad.com/" class="btn-home" target="_blank" rel="noopener">Return to Homepage</a>
+        <h1>🍁 Workforce Mobility & Employment Program 2026</h1>
+        <p>Official Placement Partner — Randstad Canada</p>
     </div>
 </header>
 
-<!-- LOCATION SELECTOR -->
-<div class="location-section" id="locationSection">
-    <div class="location-section-inner">
-        <h2>📍 Select Your Location</h2>
-        <p>Please select your current location to verify regional eligibility and view applicable program conditions.</p>
-
-        <div class="location-field">
-            <label>Continent</label>
-            <select id="selectContinent">
-                <option value="">— Select Continent —</option>
-                <option value="Africa">Africa</option>
-                <option value="Middle East">Middle East</option>
-                <option value="Europe">Europe</option>
-                <option value="North America">North America</option>
-                <option value="Caribbean">Caribbean</option>
-                <option value="South America">South America</option>
-                <option value="Asia">Asia</option>
-                <option value="Australia & Oceania">Australia & Oceania</option>
-            </select>
-        </div>
-
-        <div class="location-field">
-            <label>Country</label>
-            <select id="selectCountry" disabled>
-                <option value="">— Select Country —</option>
-            </select>
-        </div>
-
-        <div class="location-field">
-            <label>Region / State / Province</label>
-            <select id="selectRegion" disabled>
-                <option value="">— Select Region —</option>
-            </select>
-        </div>
-
-        <div class="location-field">
-            <label>City / Town</label>
-            <select id="selectCity" disabled>
-                <option value="">— Select City —</option>
-            </select>
-        </div>
-
-        <button class="btn-confirm-location" id="confirmLocationBtn" disabled>
-            🔍 Confirm My Location & Check Eligibility
-        </button>
-    </div>
-</div>
-
-<!-- VERIFICATION LOADING -->
-<div class="verify-loading" id="verifyLoading">
-    <div class="verify-spinner-wrap">
-        <div class="verify-spinner"></div>
-        <div class="verify-spinner-inner">🍁</div>
-    </div>
-    <div class="verify-title">Verifying Your Regional Eligibility</div>
-    <div class="verify-subtitle">Please wait while we process your location details...</div>
-    <div class="verify-bar-track">
-        <div class="verify-bar-fill" id="verifyBarFill"></div>
-    </div>
-    <div class="verify-steps">
-        <div class="verify-step" id="step1">
-            <div class="verify-step-dot"></div>
-            Confirming location data
-        </div>
-        <div class="verify-step" id="step2">
-            <div class="verify-step-dot"></div>
-            Checking regional program availability
-        </div>
-        <div class="verify-step" id="step3">
-            <div class="verify-step-dot"></div>
-            Calculating applicable fees
-        </div>
-        <div class="verify-step" id="step4">
-            <div class="verify-step-dot"></div>
-            Preparing your eligibility summary
+<!-- THANK YOU CONTENT -->
+<div class="page-wrap">
+    <div class="ty-icon">🍁</div>
+    <div class="ty-badge">✔ APPLICATION SUBMITTED</div>
+    <h1>Your Application Has Been Received!</h1>
+    <p class="ty-sub">
+        Thank you for taking this important step toward building your future in Canada.
+        Your application has been successfully submitted to our team and is now under active review.
+    </p>
+    <div class="ty-email-notice">
+        <span>📧</span>
+        <div>
+            <strong>A copy of your application has been sent to your email address.</strong>
+            Please check your inbox — including your spam or junk folder — and keep it safe for your records.
         </div>
     </div>
-</div>
+    <div class="next-steps">
+        <h2>📌 What Happens Next</h2>
+        <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-content">
+                <h4>Application Review</h4>
+                <p>Our specialists will carefully review your submitted details. This process typically takes 1 to 3 business days.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-content">
+                <h4>Contact Your Regional Coordinator</h4>
+                <p>To accelerate your application and receive personalized guidance, please reach out to the Program Coordinator assigned to your region using the contact details provided in your confirmation email.</p>
+            </div>
+        </div>
+        <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-content">
+                <h4>Documentation & Next Steps</h4>
+                <p>Once your application is approved, your coordinator will guide you through document submission, medical examination scheduling, and visa facilitation.</p>
+            </div>
+        </div>
 
-<!-- AFFORDABILITY GATE -->
-<div class="afford-gate" id="affordGate">
-    <h2>📋 Regional Eligibility Confirmation</h2>
-    <div class="location-text" id="locationText"></div>
-    <div class="afford-question">Are you able to cover this fee to proceed with your application?</div>
-    <div class="afford-buttons">
-        <button class="btn-afford btn-yes" id="yesBtn">✅ Yes, I can afford this</button>
-        <button class="btn-afford btn-no" id="noBtn">❌ No, I cannot afford this</button>
+        <!-- ACTION BUTTONS -->
+        <div class="action-box">
+            <h3>⚡ Quick Actions</h3>
+            <a href="https://apply.randstadca.com" class="btn-action btn-action-primary">
+                🔄 Retake Application
+                <span class="btn-action-desc">Start a fresh application</span>
+            </a>
+            <a href="#" class="btn-action btn-action-secondary" id="contactCoordinatorBtn">
+                📧 Contact Regional Coordinator — West Africa
+                <span class="btn-action-desc">Send a message to your assigned coordinator</span>
+            </a>
+        </div>
     </div>
-</div>
-
-<!-- NOT ELIGIBLE -->
-<div class="not-eligible" id="notEligible">
-    <span class="icon">🧩</span>
-    <h3>Thank You for Your Honesty</h3>
-    <p>We appreciate your transparency. Unfortunately, to qualify for the Workforce Mobility & Employment Program at this time, applicants must be able to cover the processing and placement fee applicable to their region.</p>
-    <p>This fee covers essential services including visa facilitation, medical examination, travel coordination and employer-provided accommodation. We encourage you to continue saving toward this goal.</p>
-    <p>We sincerely wish you the very best in your journey ahead.</p>
-    <button class="btn-restart" id="restartBtn">💳 I Have the Funds — Restart Application</button>
-</div>
-
-<!-- FORM -->
-<div class="form-container" id="formContainer">
-    <iframe id="jotformFrame" src="about:blank" title="Canada Work Placement Application"></iframe>
 </div>
 
 <!-- FOOTER -->
@@ -627,632 +444,4 @@
                 <ul class="footer-section-links">
                     <li><a href="https://www.randstad.com/investor-relations/investment-case/" target="_blank" rel="noopener">investment case</a></li>
                     <li><a href="https://www.randstad.com/investor-relations/results-and-reports/" target="_blank" rel="noopener">results and reports</a></li>
-                    <li><a href="https://www.randstad.com/investor-relations/randstad-share/" target="_blank" rel="noopener">randstad share</a></li>
-                    <li><a href="https://www.randstad.com/investor-relations/investor-contacts/" target="_blank" rel="noopener">investor contacts</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <button class="footer-section-btn">press <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/press/all-articles/" target="_blank" rel="noopener">press releases</a></li>
-                    <li><a href="https://www.randstad.com/press/" target="_blank" rel="noopener">news and events</a></li>
-                    <li><a href="https://www.randstad.com/workforce-insights/future-of-work/" target="_blank" rel="noopener">future of work</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <button class="footer-section-btn">about Randstad <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/about-randstad/company-profile/" target="_blank" rel="noopener">company profile</a></li>
-                    <li><a href="https://www.randstad.com/about-randstad/sustainability/" target="_blank" rel="noopener">sustainability</a></li>
-                    <li><a href="https://www.randstad.com/about-randstad/equity-diversity-inclusion/" target="_blank" rel="noopener">equity, diversity & inclusion</a></li>
-                    <li><a href="https://www.randstad.com/about-randstad/corporate-governance/" target="_blank" rel="noopener">corporate governance</a></li>
-                    <li><a href="https://www.randstad.com/find-randstad-in-your-country/" target="_blank" rel="noopener">country websites</a></li>
-                    <li><a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <button class="footer-section-btn">about this website <span class="arrow">∨</span></button>
-                <ul class="footer-section-links">
-                    <li><a href="https://www.randstad.com/disclaimer/" target="_blank" rel="noopener">disclaimer</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-divider"></div>
-        <div class="footer-bottom-row">
-            <div class="footer-legal-links">
-                <a href="https://www.randstad.com/contact-randstad/" target="_blank" rel="noopener">contact us</a>
-                <a href="https://www.randstad.com/terms-and-conditions/" target="_blank" rel="noopener">terms & conditions</a>
-                <a href="https://www.randstad.com/accessibility/" target="_blank" rel="noopener">accessibility</a>
-                <a href="https://www.randstad.com/cookies/" target="_blank" rel="noopener">cookies</a>
-                <a href="https://www.randstad.com/your-privacy-explained/" target="_blank" rel="noopener">privacy notice</a>
-                <a href="https://www.randstad.com/about-randstad/corporate-governance/compliance/misconduct-reporting-procedure/" target="_blank" rel="noopener">misconduct reporting</a>
-                <a href="https://www.randstad.com/sitemap/" target="_blank" rel="noopener">sitemap</a>
-                <a href="https://www.randstad.com/misuse-brands-randstad-group/" target="_blank" rel="noopener">misuse of our brands</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/company/randstad/" target="_blank" rel="noopener" class="social-icon">in</a>
-                <a href="https://www.youtube.com/channel/UCdmqTXc-yXEOWPM6eiE4xxw" target="_blank" rel="noopener" class="social-icon">▶</a>
-            </div>
-        </div>
-        <div class="footer-company-info">
-            <p>Randstad N.V.</p>
-            <p>Registered in The Netherlands No: 33216172. Registered office: Diemermere 25, 1112 TC Diemen, The Netherlands.</p>
-            <p>RANDSTAD is a registered trademark of © Randstad N.V. Some images on our website have been generated using AI.</p>
-        </div>
-    </div>
-</footer>
-
-<script>
-// ── MENU ──
-document.getElementById('hamburgerBtn').addEventListener('click', function() {
-    document.getElementById('menuOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-});
-document.getElementById('menuCloseBtn').addEventListener('click', function() {
-    document.getElementById('menuOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-});
-document.getElementById('mobilityLink').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.getElementById('menuOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-    var target = document.getElementById('formContainer');
-    if (target.style.display === 'block') {
-        target.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        document.getElementById('locationSection').scrollIntoView({ behavior: 'smooth' });
-    }
-});
-
-// ── FOOTER ──
-document.querySelectorAll('.footer-section-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-        this.classList.toggle('open');
-        this.nextElementSibling.classList.toggle('open');
-    });
-});
-
-// ── LOCATION DATA ──
-var locationData = {
-    'Africa': {
-        'Ghana': {
-            'Greater Accra': ['Accra', 'Tema', 'Madina', 'Ashaiman', 'Kasoa', 'Adenta', 'Teshie', 'Nungua', 'Dome', 'Achimota'],
-            'Ashanti': ['Kumasi', 'Obuasi', 'Ejisu', 'Konongo', 'Mampong', 'Bekwai'],
-            'Western': ['Takoradi', 'Sekondi', 'Tarkwa', 'Axim', 'Prestea'],
-            'Eastern': ['Koforidua', 'Nkawkaw', 'Suhum', 'Asamankese', 'Oda', 'Nsawam'],
-            'Central': ['Cape Coast', 'Kasoa', 'Winneba', 'Assin Fosu', 'Saltpond'],
-            'Volta': ['Ho', 'Keta', 'Hohoe', 'Aflao', 'Kpando'],
-            'Northern': ['Tamale', 'Yendi', 'Savelugu', 'Damongo'],
-            'Upper East': ['Bolgatanga', 'Bawku', 'Navrongo', 'Zebilla'],
-            'Upper West': ['Wa', 'Tumu', 'Jirapa', 'Lawra'],
-            'Brong-Ahafo': ['Sunyani', 'Techiman', 'Berekum', 'Dormaa Ahenkro'],
-            'Oti': ['Dambai', 'Jasikan', 'Nkwanta'],
-            'Savannah': ['Damongo', 'Bole', 'Sawla'],
-            'North East': ['Nalerigu', 'Walewale', 'Gambaga'],
-            'Ahafo': ['Goaso', 'Kukuom', 'Acherensua'],
-            'Bono East': ['Techiman', 'Nkoranza', 'Atebubu'],
-            'Western North': ['Sefwi Wiawso', 'Bibiani', 'Enchi']
-        },
-        'Nigeria': {
-            'Lagos': ['Lagos Island', 'Ikeja', 'Surulere', 'Victoria Island', 'Lekki', 'Ikoyi', 'Yaba', 'Apapa', 'Alimosho', 'Oshodi', 'Mushin', 'Badagry', 'Epe', 'Ikorodu'],
-            'FCT Abuja': ['Garki', 'Wuse', 'Maitama', 'Asokoro', 'Gwarinpa', 'Kubwa', 'Kuje', 'Bwari', 'Gwagwalada'],
-            'Rivers': ['Port Harcourt', 'Obio/Akpor', 'Eleme', 'Ikwerre', 'Bonny'],
-            'Delta': ['Warri', 'Asaba', 'Ughelli', 'Sapele', 'Agbor'],
-            'Anambra': ['Awka', 'Onitsha', 'Nnewi', 'Ekwulobia'],
-            'Enugu': ['Enugu', 'Nsukka', 'Oji River', 'Agbani'],
-            'Imo': ['Owerri', 'Okigwe', 'Orlu', 'Mbaise'],
-            'Oyo': ['Ibadan', 'Ogbomosho', 'Oyo', 'Iseyin'],
-            'Edo': ['Benin City', 'Auchi', 'Ekpoma', 'Uromi'],
-            'Akwa Ibom': ['Uyo', 'Eket', 'Ikot Ekpene', 'Oron'],
-            'Cross River': ['Calabar', 'Ikom', 'Ogoja', 'Obudu'],
-            'Kano': ['Kano City', 'Wudil', 'Gaya', 'Bichi'],
-            'Ogun': ['Abeokuta', 'Sagamu', 'Ijebu-Ode', 'Ota'],
-            'Ondo': ['Akure', 'Ondo Town', 'Owo', 'Ikare'],
-            'Osun': ['Osogbo', 'Ile-Ife', 'Ilesa', 'Ede'],
-            'Ekiti': ['Ado-Ekiti', 'Ikere-Ekiti', 'Ijero-Ekiti'],
-            'Abia': ['Umuahia', 'Aba', 'Ohafia'],
-            'Bayelsa': ['Yenagoa', 'Brass', 'Ogbia'],
-            'Ebonyi': ['Abakaliki', 'Afikpo', 'Onueke'],
-            'Plateau': ['Jos', 'Bukuru', 'Shendam'],
-            'Kaduna': ['Kaduna', 'Zaria', 'Kafanchan']
-        },
-        'Kenya': {
-            'Nairobi': ['Nairobi CBD', 'Westlands', 'Karen', 'Lavington', 'Kasarani'],
-            'Mombasa': ['Mombasa Island', 'Nyali', 'Bamburi', 'Likoni'],
-            'Kisumu': ['Kisumu City', 'Ahero', 'Muhoroni'],
-            'Nakuru': ['Nakuru Town', 'Naivasha', 'Gilgil'],
-            'Eldoret': ['Eldoret Town', 'Turbo', 'Burnt Forest']
-        },
-        'South Africa': {
-            'Gauteng': ['Johannesburg', 'Pretoria', 'Soweto', 'Sandton'],
-            'Western Cape': ['Cape Town', 'Stellenbosch', 'Paarl', 'George'],
-            'KwaZulu-Natal': ['Durban', 'Pietermaritzburg', 'Richards Bay'],
-            'Eastern Cape': ['Port Elizabeth', 'East London', 'Mthatha'],
-            'Limpopo': ['Polokwane', 'Tzaneen', 'Louis Trichardt']
-        },
-        'Uganda': {
-            'Central': ['Kampala', 'Entebbe', 'Mukono', 'Wakiso'],
-            'Eastern': ['Jinja', 'Mbale', 'Tororo'],
-            'Western': ['Mbarara', 'Fort Portal', 'Kasese'],
-            'Northern': ['Gulu', 'Lira', 'Arua']
-        },
-        'Tanzania': {
-            'Dar es Salaam': ['Kinondoni', 'Ilala', 'Temeke', 'Kigamboni'],
-            'Arusha': ['Arusha City', 'Moshi', 'Usa River'],
-            'Mwanza': ['Mwanza City', 'Musoma', 'Bukoba'],
-            'Zanzibar': ['Zanzibar City', 'Mkokotoni']
-        },
-        'Senegal': {
-            'Dakar': ['Dakar', 'Pikine', 'Guédiawaye', 'Rufisque'],
-            'Thiès': ['Thiès', 'Mbour', 'Tivaouane'],
-            'Saint-Louis': ['Saint-Louis', 'Richard Toll']
-        },
-        'Côte d\'Ivoire': {
-            'Abidjan': ['Plateau', 'Cocody', 'Yopougon', 'Abobo'],
-            'Bouaké': ['Bouaké', 'Sakassou'],
-            'Daloa': ['Daloa', 'Issia']
-        },
-        'Cameroon': {
-            'Centre': ['Yaoundé', 'Mbalmayo', 'Obala'],
-            'Littoral': ['Douala', 'Nkongsamba', 'Edéa'],
-            'West': ['Bafoussam', 'Dschang', 'Mbouda'],
-            'South West': ['Buea', 'Limbe', 'Kumba']
-        },
-        'Ethiopia': {
-            'Addis Ababa': ['Addis Ababa', 'Bole', 'Kirkos', 'Yeka'],
-            'Oromia': ['Adama', 'Jimma', 'Dire Dawa'],
-            'Amhara': ['Bahir Dar', 'Gondar', 'Dessie']
-        },
-        'Rwanda': {
-            'Kigali': ['Nyarugenge', 'Gasabo', 'Kicukiro'],
-            'Eastern': ['Rwamagana', 'Nyagatare'],
-            'Southern': ['Huye', 'Muhanga', 'Nyanza']
-        },
-        'Zimbabwe': {
-            'Harare': ['Harare CBD', 'Chitungwiza', 'Epworth'],
-            'Bulawayo': ['Bulawayo City', 'Nkulumane'],
-            'Mashonaland': ['Bindura', 'Chinhoyi', 'Marondera']
-        },
-        'Zambia': {
-            'Lusaka': ['Lusaka CBD', 'Chilenje', 'Kafue'],
-            'Copperbelt': ['Ndola', 'Kitwe', 'Chingola'],
-            'Southern': ['Livingstone', 'Mazabuka', 'Choma']
-        }
-    },
-    'Middle East': {
-        'United Arab Emirates': {
-            'Dubai': ['Dubai City', 'Deira', 'Bur Dubai', 'Jumeirah', 'Dubai Marina'],
-            'Abu Dhabi': ['Abu Dhabi City', 'Al Ain', 'Khalifa City'],
-            'Sharjah': ['Sharjah City', 'Khor Fakkan'],
-            'Ajman': ['Ajman City']
-        },
-        'Saudi Arabia': {
-            'Riyadh': ['Riyadh City', 'Al Olaya', 'Malaz'],
-            'Jeddah': ['Jeddah City', 'Al Balad', 'Al Andalus'],
-            'Mecca': ['Mecca City', 'Taif'],
-            'Medina': ['Medina City', 'Yanbu']
-        },
-        'Qatar': {
-            'Doha': ['Doha City', 'Al Wakrah', 'Al Khor', 'Lusail'],
-            'Al Rayyan': ['Al Rayyan', 'Umm Slal']
-        },
-        'Kuwait': {
-            'Kuwait City': ['Salmiya', 'Hawalli', 'Farwaniya', 'Ahmadi'],
-            'Ahmadi': ['Ahmadi', 'Fahaheel']
-        },
-        'Bahrain': {
-            'Manama': ['Manama', 'Muharraq', 'Riffa', 'Hamad Town']
-        },
-        'Oman': {
-            'Muscat': ['Muscat City', 'Ruwi', 'Muttrah', 'Al Khuwair'],
-            'Salalah': ['Salalah', 'Thumrait']
-        },
-        'Jordan': {
-            'Amman': ['Amman City', 'Zarqa', 'Irbid', 'Aqaba']
-        },
-        'Lebanon': {
-            'Beirut': ['Beirut City', 'Tripoli', 'Sidon', 'Tyre']
-        }
-    },
-    'Europe': {
-        'United Kingdom': {
-            'England': ['London', 'Manchester', 'Birmingham', 'Leeds', 'Liverpool', 'Bristol'],
-            'Scotland': ['Edinburgh', 'Glasgow', 'Aberdeen', 'Dundee'],
-            'Wales': ['Cardiff', 'Swansea', 'Newport'],
-            'Northern Ireland': ['Belfast', 'Derry', 'Lisburn']
-        },
-        'Germany': {
-            'Bavaria': ['Munich', 'Nuremberg', 'Augsburg'],
-            'North Rhine-Westphalia': ['Cologne', 'Dusseldorf', 'Dortmund'],
-            'Berlin': ['Berlin City', 'Charlottenburg', 'Mitte'],
-            'Hamburg': ['Hamburg City', 'Altona', 'Wandsbek']
-        },
-        'France': {
-            'Île-de-France': ['Paris', 'Versailles', 'Boulogne-Billancourt'],
-            'Provence': ['Marseille', 'Nice', 'Toulon'],
-            'Auvergne-Rhône-Alpes': ['Lyon', 'Grenoble', 'Clermont-Ferrand']
-        },
-        'Netherlands': {
-            'North Holland': ['Amsterdam', 'Haarlem', 'Zaandam'],
-            'South Holland': ['Rotterdam', 'The Hague', 'Leiden'],
-            'Utrecht': ['Utrecht', 'Amersfoort']
-        },
-        'Ireland': {
-            'Leinster': ['Dublin', 'Drogheda', 'Dundalk', 'Naas'],
-            'Munster': ['Cork', 'Limerick', 'Waterford', 'Tralee'],
-            'Connacht': ['Galway', 'Sligo', 'Castlebar']
-        },
-        'Spain': {
-            'Catalonia': ['Barcelona', 'Tarragona', 'Lleida'],
-            'Madrid': ['Madrid City', 'Alcalá de Henares', 'Getafe'],
-            'Andalusia': ['Seville', 'Málaga', 'Granada']
-        },
-        'Italy': {
-            'Lombardy': ['Milan', 'Bergamo', 'Brescia'],
-            'Lazio': ['Rome', 'Latina', 'Frosinone'],
-            'Campania': ['Naples', 'Salerno', 'Caserta']
-        },
-        'Portugal': {
-            'Lisbon': ['Lisbon City', 'Sintra', 'Cascais'],
-            'Porto': ['Porto City', 'Vila Nova de Gaia', 'Braga'],
-            'Algarve': ['Faro', 'Portimão', 'Lagos']
-        },
-        'Belgium': {
-            'Brussels': ['Brussels City', 'Ixelles', 'Molenbeek'],
-            'Flanders': ['Antwerp', 'Ghent', 'Bruges', 'Leuven'],
-            'Wallonia': ['Liège', 'Namur', 'Charleroi']
-        }
-    },
-    'North America': {
-        'Canada': {
-            'Ontario': ['Toronto', 'Ottawa', 'Mississauga', 'Brampton', 'Hamilton'],
-            'British Columbia': ['Vancouver', 'Surrey', 'Burnaby', 'Richmond'],
-            'Alberta': ['Calgary', 'Edmonton', 'Red Deer', 'Lethbridge'],
-            'Quebec': ['Montreal', 'Quebec City', 'Laval', 'Gatineau'],
-            'Manitoba': ['Winnipeg', 'Brandon', 'Steinbach'],
-            'Saskatchewan': ['Saskatoon', 'Regina', 'Prince Albert']
-        },
-        'United States': {
-            'New York': ['New York City', 'Buffalo', 'Rochester', 'Yonkers'],
-            'California': ['Los Angeles', 'San Francisco', 'San Diego', 'Sacramento'],
-            'Texas': ['Houston', 'Dallas', 'San Antonio', 'Austin'],
-            'Florida': ['Miami', 'Orlando', 'Tampa', 'Jacksonville'],
-            'Georgia': ['Atlanta', 'Savannah', 'Augusta'],
-            'Illinois': ['Chicago', 'Aurora', 'Naperville'],
-            'Maryland': ['Baltimore', 'Rockville', 'Gaithersburg'],
-            'New Jersey': ['Newark', 'Jersey City', 'Paterson'],
-            'Minnesota': ['Minneapolis', 'Saint Paul', 'Rochester']
-        },
-        'Mexico': {
-            'Mexico City': ['Benito Juárez', 'Coyoacán', 'Tlalpan'],
-            'Jalisco': ['Guadalajara', 'Zapopan', 'Tlaquepaque'],
-            'Nuevo León': ['Monterrey', 'San Nicolás', 'Apodaca']
-        }
-    },
-    'Caribbean': {
-        'Jamaica': {
-            'Kingston': ['Kingston City', 'Portmore', 'Spanish Town'],
-            'Saint Andrew': ['Half Way Tree', 'Constant Spring'],
-            'Saint James': ['Montego Bay', 'Falmouth']
-        },
-        'Trinidad and Tobago': {
-            'Port of Spain': ['Port of Spain', 'San Fernando', 'Chaguanas'],
-            'Tobago': ['Scarborough', 'Roxborough']
-        },
-        'Barbados': {
-            'Saint Michael': ['Bridgetown', 'Speightstown'],
-            'Christ Church': ['Oistins', 'Worthing']
-        },
-        'Bahamas': {
-            'New Providence': ['Nassau', 'Cable Beach'],
-            'Grand Bahama': ['Freeport', 'Lucaya']
-        },
-        'Haiti': {
-            'Ouest': ['Port-au-Prince', 'Pétion-Ville', 'Delmas'],
-            'Nord': ['Cap-Haïtien', 'Limbé']
-        },
-        'Guyana': {
-            'Demerara-Mahaica': ['Georgetown', 'Agricola', 'Sophia'],
-            'Berbice': ['New Amsterdam', 'Corriverton']
-        }
-    },
-    'South America': {
-        'Brazil': {
-            'São Paulo': ['São Paulo City', 'Campinas', 'Santos', 'Guarulhos'],
-            'Rio de Janeiro': ['Rio de Janeiro City', 'Niterói', 'Duque de Caxias'],
-            'Minas Gerais': ['Belo Horizonte', 'Uberlândia', 'Contagem']
-        },
-        'Colombia': {
-            'Bogotá': ['Bogotá City', 'Soacha', 'Usme'],
-            'Antioquia': ['Medellín', 'Bello', 'Itagüí'],
-            'Valle del Cauca': ['Cali', 'Buenaventura', 'Palmira']
-        },
-        'Venezuela': {
-            'Caracas': ['Caracas City', 'Petare', 'Macarao'],
-            'Zulia': ['Maracaibo', 'Cabimas'],
-            'Carabobo': ['Valencia', 'Maracay']
-        },
-        'Argentina': {
-            'Buenos Aires': ['Buenos Aires City', 'Córdoba', 'La Plata'],
-            'Córdoba': ['Córdoba City', 'Villa María'],
-            'Mendoza': ['Mendoza City', 'San Rafael']
-        },
-        'Peru': {
-            'Lima': ['Lima City', 'Callao', 'San Juan de Lurigancho'],
-            'Arequipa': ['Arequipa City', 'Cayma'],
-            'La Libertad': ['Trujillo', 'Chimbote']
-        }
-    },
-    'Asia': {
-        'India': {
-            'Maharashtra': ['Mumbai', 'Pune', 'Nagpur', 'Nashik'],
-            'Delhi': ['New Delhi', 'Noida', 'Gurgaon', 'Faridabad'],
-            'Karnataka': ['Bangalore', 'Mysore', 'Hubli'],
-            'Tamil Nadu': ['Chennai', 'Coimbatore', 'Madurai'],
-            'West Bengal': ['Kolkata', 'Howrah', 'Durgapur']
-        },
-        'Philippines': {
-            'Metro Manila': ['Manila', 'Quezon City', 'Makati', 'Pasig', 'Taguig'],
-            'Cebu': ['Cebu City', 'Mandaue', 'Lapu-Lapu'],
-            'Davao': ['Davao City', 'Tagum', 'Digos']
-        },
-        'Pakistan': {
-            'Punjab': ['Lahore', 'Faisalabad', 'Rawalpindi', 'Multan'],
-            'Sindh': ['Karachi', 'Hyderabad', 'Sukkur'],
-            'Khyber Pakhtunkhwa': ['Peshawar', 'Mardan', 'Abbottabad']
-        },
-        'Bangladesh': {
-            'Dhaka': ['Dhaka City', 'Narayanganj', 'Gazipur'],
-            'Chittagong': ['Chittagong City', 'Comilla'],
-            'Sylhet': ['Sylhet City', 'Moulvibazar']
-        },
-        'Sri Lanka': {
-            'Western': ['Colombo', 'Sri Jayawardenepura Kotte', 'Gampaha'],
-            'Central': ['Kandy', 'Matale', 'Nuwara Eliya'],
-            'Southern': ['Galle', 'Matara', 'Hambantota']
-        },
-        'Nepal': {
-            'Bagmati': ['Kathmandu', 'Lalitpur', 'Bhaktapur'],
-            'Gandaki': ['Pokhara', 'Damauli'],
-            'Lumbini': ['Butwal', 'Bhairahawa']
-        }
-    },
-    'Australia & Oceania': {
-        'Australia': {
-            'New South Wales': ['Sydney', 'Newcastle', 'Wollongong', 'Parramatta'],
-            'Victoria': ['Melbourne', 'Geelong', 'Ballarat', 'Bendigo'],
-            'Queensland': ['Brisbane', 'Gold Coast', 'Sunshine Coast', 'Townsville'],
-            'Western Australia': ['Perth', 'Fremantle', 'Mandurah'],
-            'South Australia': ['Adelaide', 'Mount Gambier', 'Whyalla']
-        },
-        'New Zealand': {
-            'Auckland': ['Auckland City', 'Manukau', 'North Shore', 'Waitakere'],
-            'Wellington': ['Wellington City', 'Lower Hutt', 'Porirua'],
-            'Canterbury': ['Christchurch', 'Timaru', 'Ashburton']
-        },
-        'Papua New Guinea': {
-            'National Capital': ['Port Moresby', 'Boroko'],
-            'Morobe': ['Lae', 'Bulolo']
-        },
-        'Fiji': {
-            'Central': ['Suva', 'Nausori'],
-            'Western': ['Nadi', 'Lautoka', 'Ba']
-        }
-    }
-};
-
-// ── REGION PRICING ──
-var regionPricing = {
-    'Africa': { amount: '$4,000 USD' },
-    'Middle East': { amount: '$3,000 USD' },
-    'Europe': { amount: '$2,000 USD' },
-    'North America': { amount: '$2,000 USD' },
-    'Caribbean': { amount: '$2,000 USD' },
-    'South America': { amount: '$2,000 USD' },
-    'Asia': { amount: '$2,000 USD' },
-    'Australia & Oceania': { amount: '$2,000 USD' }
-};
-
-// ── DROPDOWN CASCADE ──
-var selContinent = document.getElementById('selectContinent');
-var selCountry = document.getElementById('selectCountry');
-var selRegion = document.getElementById('selectRegion');
-var selCity = document.getElementById('selectCity');
-var confirmBtn = document.getElementById('confirmLocationBtn');
-
-function resetSelect(sel, label) {
-    sel.innerHTML = '<option value="">— Select ' + label + ' —</option>';
-    sel.disabled = true;
-}
-
-function checkConfirmBtn() {
-    var ready = selContinent.value && selCountry.value && selRegion.value && selCity.value;
-    confirmBtn.disabled = !ready;
-}
-
-selContinent.addEventListener('change', function() {
-    resetSelect(selCountry, 'Country');
-    resetSelect(selRegion, 'Region');
-    resetSelect(selCity, 'City');
-    checkConfirmBtn();
-    if (!this.value) return;
-    var countries = Object.keys(locationData[this.value] || {});
-    countries.forEach(function(c) {
-        var opt = document.createElement('option');
-        opt.value = c;
-        opt.textContent = c;
-        selCountry.appendChild(opt);
-    });
-    selCountry.disabled = false;
-});
-
-selCountry.addEventListener('change', function() {
-    resetSelect(selRegion, 'Region');
-    resetSelect(selCity, 'City');
-    checkConfirmBtn();
-    if (!this.value) return;
-    var regions = Object.keys(locationData[selContinent.value][this.value] || {});
-    regions.forEach(function(r) {
-        var opt = document.createElement('option');
-        opt.value = r;
-        opt.textContent = r;
-        selRegion.appendChild(opt);
-    });
-    selRegion.disabled = false;
-});
-
-selRegion.addEventListener('change', function() {
-    resetSelect(selCity, 'City');
-    checkConfirmBtn();
-    if (!this.value) return;
-    var cities = locationData[selContinent.value][selCountry.value][this.value] || [];
-    cities.forEach(function(c) {
-        var opt = document.createElement('option');
-        opt.value = c;
-        opt.textContent = c;
-        selCity.appendChild(opt);
-    });
-    selCity.disabled = false;
-});
-
-selCity.addEventListener('change', checkConfirmBtn);
-
-// ── VERIFICATION ANIMATION ──
-function runVerification() {
-    var continent = selContinent.value;
-    var country = selCountry.value;
-    var region = selRegion.value;
-    var city = selCity.value;
-    var fullLocation = city + ', ' + region + ', ' + country + ', ' + continent;
-    var pricing = regionPricing[continent] || { amount: '$4,000 USD' };
-
-    document.getElementById('locationSection').style.display = 'none';
-    var loading = document.getElementById('verifyLoading');
-    loading.style.display = 'block';
-    loading.scrollIntoView({ behavior: 'smooth' });
-
-    var fill = document.getElementById('verifyBarFill');
-    var steps = ['step1', 'step2', 'step3', 'step4'];
-    var progress = [20, 45, 70, 95];
-    var currentStep = 0;
-
-    function activateStep(i) {
-        if (i > 0) {
-            document.getElementById(steps[i-1]).classList.remove('active');
-            document.getElementById(steps[i-1]).classList.add('done');
-        }
-        if (i < steps.length) {
-            document.getElementById(steps[i]).classList.add('active');
-            fill.style.width = progress[i] + '%';
-        }
-    }
-
-    activateStep(0);
-
-    var interval = setInterval(function() {
-        currentStep++;
-        if (currentStep < steps.length) {
-            activateStep(currentStep);
-        } else {
-            clearInterval(interval);
-            fill.style.width = '100%';
-            setTimeout(function() {
-                document.getElementById(steps[steps.length-1]).classList.remove('active');
-                document.getElementById(steps[steps.length-1]).classList.add('done');
-                loading.style.display = 'none';
-                showAffordGate(fullLocation, continent, country, region, city, pricing);
-            }, 500);
-        }
-    }, 700);
-}
-
-confirmBtn.addEventListener('click', runVerification);
-
-// ── AFFORDABILITY GATE ──
-function showAffordGate(fullLocation, continent, country, region, city, pricing) {
-    var conditions =
-        'For candidates applying from <strong>' + continent + ' (' + country + ')</strong>, ' +
-        'note that the following conditions apply:<br><br>' +
-        'A processing and placement fee of <strong>' + pricing.amount + '</strong> is required. ' +
-        'This comprehensive package covers:<br><br>' +
-        '✅ Employer matching with a verified Canadian company<br>' +
-        '✅ Work permit application and documentation support<br>' +
-        '✅ Medical examination coordination and clearance<br>' +
-        '✅ Travel arrangement and flight coordination<br>' +
-        '✅ <strong>Jobs with employer-provided accommodation in Canada</strong><br>' +
-        '✅ Pre-departure orientation and guidance<br>' +
-        '✅ Dedicated regional coordinator support<br><br>' +
-        'Randstad Canada handles all employer matching, job placement and arrival support. ' +
-        'You focus on preparing for your new life — <strong>we handle the rest.</strong>';
-
-    var text = '<strong>📍 Your location is:</strong> ' + city + ', ' + region + ', ' + country + '<br><br>' + conditions;
-    document.getElementById('locationText').innerHTML = text;
-    document.getElementById('affordGate').style.display = 'block';
-    document.getElementById('affordGate').scrollIntoView({ behavior: 'smooth' });
-
-    window._selectedLocation = fullLocation;
-    window._selectedContinent = continent;
-    window._selectedCountry = country;
-    window._selectedRegion = region;
-    window._selectedCity = city;
-    window._selectedPricing = pricing;
-}
-
-document.getElementById('yesBtn').addEventListener('click', function() {
-    document.getElementById('affordGate').style.display = 'none';
-    loadForm();
-});
-
-document.getElementById('noBtn').addEventListener('click', function() {
-    document.getElementById('affordGate').style.display = 'none';
-    document.getElementById('notEligible').style.display = 'block';
-    setTimeout(function() {
-        document.getElementById('notEligible').scrollIntoView({ behavior: 'smooth' });
-    }, 300);
-});
-
-document.getElementById('restartBtn').addEventListener('click', function() {
-    document.getElementById('notEligible').style.display = 'none';
-    document.getElementById('locationSection').style.display = 'block';
-    document.getElementById('locationSection').scrollIntoView({ behavior: 'smooth' });
-});
-
-// ── LOAD FORM ──
-function loadForm() {
-    var continent = window._selectedContinent || '';
-    var country = window._selectedCountry || '';
-    var region = window._selectedRegion || '';
-    var city = window._selectedCity || '';
-    var pricing = window._selectedPricing || { amount: '$4,000 USD' };
-    var fullLocation = city + ', ' + region + ', ' + country;
-
-    var conditions =
-        'For candidates applying from ' + continent + ' (' + country + '), ' +
-        'note that the following conditions apply: ' +
-        'A processing and placement fee of ' + pricing.amount + ' is required. ' +
-        'This comprehensive package covers: ' +
-        'Employer matching with a verified Canadian company. ' +
-        'Work permit application and documentation support. ' +
-        'Medical examination coordination and clearance. ' +
-        'Travel arrangement and flight coordination. ' +
-        'Jobs with employer-provided accommodation in Canada. ' +
-        'Pre-departure orientation and guidance. ' +
-        'Dedicated regional coordinator support. ' +
-        'Randstad Canada handles all employer matching, job placement and arrival support. ' +
-        'You focus on preparing for your new life — we handle the rest.';
-
-    var encodedAddress = encodeURIComponent(fullLocation);
-    var encodedConditions = encodeURIComponent(conditions);
-
-    document.getElementById('formContainer').style.display = 'block';
-    document.getElementById('jotformFrame').src =
-        'https://form.jotform.com/261934634754566?currentLocation99=' + encodedAddress +
-        '&applicationConditions=' + encodedConditions;
-    setTimeout(function() {
-        document.getElementById('formContainer').scrollIntoView({ behavior: 'smooth' });
-    }, 300);
-}
-</script>
-
-</body>
-</html>
+                    <li><a href="https://www.randstad.com/investor-relations/randstad-share/" target="_blank" rel="n
